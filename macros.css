@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+}
+
+.mobile-toggle {
+    display: none;
+}
+
+
+
+body {
+    background-image: url("Bilder för slut Projekt/macro-image.AVIF");
+    background-size: cover;
+    height: 500px;
+    margin-top: 80px;
+}
+
+#nav li:first-child a {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s, background 1s;
+
+}
+
+.logo img {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+
+.logo {
+    position: absolute;
+    left: 10px;
+}
+
+.info {
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+.info h1 {
+    padding-bottom: 15px;
+}
+
+
+
+
+ul {
+    display: flex;
+    gap: 150px;
+    justify-content: center;
+
+}
+
+li {
+    list-style-type: none;
+    padding: 20px;
+    margin-top: 10px;
+
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+li a:hover {
+    color: rgba(255, 255, 255, 65%);
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: transparent;
+}
+
+li a:active {
+    color: rgba(255, 255, 255, 30%);
+
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(3);
+    justify-content: center;
+}

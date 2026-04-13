@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="JavaScript.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Bilder för slut Projekt/slut-projekt-logo.SVG" alt="">
+            </a>
+        </div>
+        <button id="menu-btn" class="mobile-toggle" onclick="ShowMenyMobile()">☰</button>
+        <nav id="nav">
+            <ul>
+                <li><a href="plans.html">Plans</a></li>
+                <li><a href="övningar.html">övningar</a></li>
+                <li><a href="macros.html">Macro neutriants</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <section class="hero">
+            <h1>
+                Bygg din bästa fysik
+            </h1>
+            <p></p>
+        </section>
+        <br>
+        <hr>
+
+        <section class="info">
+            <h2>Vad är syftet med hemsidan?</h2>
+            <p>Syftet är att du ska uppleva den bästa versionen av dig genom att ta hänsyn till övningar, färdiga
+                träningsplaner, kost och genom att skapa en egen träningschema som passar just dig.
+            </p>
+        </section>
+
+        <hr>
+        <section class="features">
+            <div class="Övningar">
+                <h3>Övningar</h3>
+                <p>Här kan du lära känna de viktigaste övningar som finns.</p>
+                <button id="knapp1" onclick="Övnignar()">Läs mer</button>
+                <div id="InfoÖvningar" hidden>
+                    <p> Här kan du lära dig de viktigaste övningarna inom styrketräning som bänkpress, squat och
+                        marklyft.
+                        Du får veta vilka muskler som tränas och hur du utför övningarna korrekt.
+                    </p>
+                    <a href="övningar.html">Övningar</a>
+                </div>
+            </div>
+            <div class="FärdigaSchema">
+                <h3>Träningsplaner</h3>
+                <p>Här kan du lära dig om en av de mest kända och mest använda träningsplaner.</p>
+                <button id="knapp2" onclick="FärdigaSchema()">läs mer</button>
+                <div id="infoFärdigschema" hidden>
+                    <p>Här hittar du färdiga träningsprogram som Push/Pull/Legs och helkroppsscheman.
+                        Dessa program hjälper dig att träna effektivt och nå dina mål snabbare.
+                    </p>
+                    <a href="">Träningsplaner</a>
+
+                </div>
+            </div>
+
+            <div class="Kost">
+                <h3>Kost</h3>
+                <p>Här lär du dig om kost och hur du hanterar macros baserat på vilken resultat du vill se.</p>
+                <button id="knapp4" onclick="Kost()">Läs mer</button>
+                <div id="Infokost" hidden>
+                    <p>
+                        Här lär du dig grunderna om kost och macros – protein, kolhydrater och fett.
+                        Du får förståelse för hur du ska äta för att bygga muskler, gå ner i vikt eller behålla vikten.
+                    </p>
+                    <a href="macros.html">Macro närningsämne</a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
