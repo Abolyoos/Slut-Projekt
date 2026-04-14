@@ -209,120 +209,120 @@ h1 {
 
 @media (max-width: 768px) {
 
+    /* ===== SÄKER MOBIL-GRUND ===== */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+
+    /* ===== HEADER ===== */
     header {
-        display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+        padding: 10px;
+        width: 100%;
     }
 
     .logo {
-        position: absolute;
+        position: static;
     }
 
-    /* 1. Gör så att hamburgarknappen syns */
+    /* ===== HAMBURGER ===== */
     .mobile-toggle {
         display: block;
-        font-size: 30px;
+        font-size: 32px;
         background: none;
         border: none;
         color: white;
-        padding: 10px;
         cursor: pointer;
-        transition: transform .2s;
-        z-index: 1000;
     }
 
-    .mobile-toggle:hover {
-        transform: scale(1.2);
-    }
-
-    /* 2. Menyn som flyter ovanpå */
+    /* ===== NAV ===== */
     #nav {
         display: none;
         position: absolute;
-        justify-content: center;
-        /* Centrerar ul-elementet horisontellt */
+        top: 60px;
         right: 0;
-        top: 81px;
-        background-color: rgba(0, 0, 0, 0.9);
-        /* Snyggare med mörk bakgrund istället för röd */
-        border-bottom-left-radius: 15px;
-        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        background: rgba(0,0,0,0.95);
         z-index: 999;
-        flex-direction: column;
-        padding: 20px 0;
-    }
-
-    ul{
-       display: flex;
-    justify-content: center; /* Centrerar själva länkarna inuti ul */
-    gap: 50px;               /* Justera avståndet mellan länkarna här */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    }
-
-
-    li a {
-        color: black;
-        background-color: white;
-        text-align: center;
-        border-radius: 5px;
-
-    }
-
-    .info {
-        text-align: center;
+        padding: 10px 0;
     }
 
     #nav.show-mobile {
-        display: flex;
-    }
-
-    /* 3. Gör länkarna i menyn lättare att trycka på */
-    #nav ul {
-        flex-direction: column;
-        gap: 0;
-        /* Vi använder padding på länkarna istället */
-        margin: 0;
-    }
-
-    #nav li a {
-        font-size: 1.2rem;
-        padding: 5px;
         display: block;
     }
 
-    /* 4. Fixa dina boxar (features) så de staplas snyggt */
-    .features {
+    #nav ul {
         flex-direction: column;
-        /* Stapla boxarna på höjden */
-        gap: 20px;
+        gap: 10px;
+        align-items: center;
+    }
+
+    li {
         padding: 10px;
     }
 
-
-
-    /* Gör boxarna responsiva (ta bort fasta pixlar) */
-    #Infokost,
-    #InfoSkapaEgenScema,
-    #infoFärdigschema,
-    #InfoÖvningar {
-        width: 90%;
-        max-width: 400px;
-        /* Ser till att de inte blir för breda */
-        margin: 0 auto;
-        /* Centrerar dem */
-        height: auto;
-        /* Låt innehållet styra höjden */
-        min-height: 300px;
+    li a {
+        display: block;
+        width: 80%;
+        text-align: center;
+        background: white;
+        color: black;
+        border-radius: 8px;
+        padding: 10px;
     }
 
-
-
-
-
-    /* Justera huvudrubriken för mobil */
+    /* ===== HERO ===== */
     h1 {
-        font-size: 40px;
+        font-size: 32px;
+        padding: 10px;
+    }
+
+    .hero {
+        padding: 30px 10px;
+    }
+
+    /* ===== INFO ===== */
+    .info {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    /* ===== FEATURES (VIKTIGASTE FIXEN) ===== */
+    .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .Övningar,
+    .FärdigaSchema,
+    .Kost {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    /* ===== BOXAR ===== */
+    #Infokost,
+    #infoFärdigschema,
+    #InfoÖvningar {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 250px;
+    }
+
+    /* ===== LÄNKAR I BOXAR ===== */
+    #InfoÖvningar a,
+    #infoFärdigschema a,
+    #Infokost a {
+        margin-top: 20px;
+        width: 80%;
     }
 }
