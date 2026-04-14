@@ -212,7 +212,6 @@ h1 {
     /* ===== SÄKER MOBIL-GRUND ===== */
     html, body {
         width: 100%;
-        overflow-x: hidden;
     }
 
     body {
