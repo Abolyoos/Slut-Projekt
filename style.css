@@ -3,25 +3,24 @@
 
 }
 
-body {
-    color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-image: url("Bilder för slut Projekt/SlutProjektBakgrund.AVIF");
-    background-size: cover;
-    height: 600px;
-
-}
-
 .mobile-toggle {
     display: none;
 }
 
+body {
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
+    background-size: cover;
+    min-height: 100vh;
+    margin-top: 80px;
+}
+
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s, background 1s;
 }
 
 
@@ -35,6 +34,7 @@ ul {
 li {
     list-style-type: none;
     padding: 20px;
+    margin-top: 10px;
 }
 
 li a {
@@ -43,6 +43,7 @@ li a {
     padding: 10px;
     border-style: solid;
     border-color: transparent;
+    font-size: 20px;
 }
 
 li a:hover {
@@ -58,16 +59,25 @@ li a:active {
 
 }
 
-.logo img {
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 20px;
-}
-
 .logo {
     position: absolute;
+    display: flex;
     left: 10px;
+    bottom: 20px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 2px;
+
+}
+
+span {
+    color: red;
+    background-color: white;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .hero {
@@ -133,8 +143,16 @@ h1 {
     background-color: rgba(11, 9, 9, 0.4);
     border-radius: 20px;
     padding: 10px;
-
+    transition: transform 0.3s ease;
 }
+
+#Infokost p:hover,
+#infoFärdigschema p:hover,
+#InfoÖvningar p:hover {
+    transform: translateY(-5px);
+}
+
+
 
 
 
@@ -205,123 +223,167 @@ h1 {
     color: rgba(156, 137, 137, 0.5);
 }
 
+footer {
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 40px 20px;
+    margin-top: 90px;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    text-align: center;
+}
+
+.footer h3 {
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer h4 {
+    color: red;
+}
+
+.sociala-medier a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+
+
+
+
 /*Mindre skärmar*/
 
 @media (max-width: 768px) {
 
-    /* ===== SÄKER MOBIL-GRUND ===== */
-    html, body {
-        width: 100%;
-    }
-
-    body {
-        background-attachment: scroll;
-    }
-
-    /* ===== HEADER ===== */
     header {
-        justify-content: space-between;
-        padding: 10px;
-        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        top: 15px;
     }
 
     .logo {
-        position: static;
+        position: absolute;
     }
 
-    /* ===== HAMBURGER ===== */
     .mobile-toggle {
         display: block;
-        font-size: 32px;
+        font-size: 30px;
         background: none;
         border: none;
         color: white;
-        cursor: pointer;
+        padding: 10px;
+        transition: transform .2s;
+        z-index: 1000;
     }
 
-    /* ===== NAV ===== */
+    .mobile-toggle:hover {
+        transform: scale(1.2);
+    }
+
     #nav {
         display: none;
         position: absolute;
-        top: 60px;
+        justify-content: center;
         right: 0;
-        width: 100%;
-        background: rgba(0,0,0,0.95);
+        top: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-bottom-left-radius: 15px;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
         z-index: 999;
-        padding: 10px 0;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    li a {
+        color: black;
+        background-color: white;
+        text-align: center;
+        border-radius: 5px;
+
+    }
+
+    .info {
+        text-align: center;
     }
 
     #nav.show-mobile {
-        display: block;
+        display: flex;
     }
 
     #nav ul {
         flex-direction: column;
-        gap: 10px;
-        align-items: center;
+        gap: 0;
+        margin: 0;
     }
 
-    li {
-        padding: 10px;
-    }
-
-    li a {
+    #nav li a {
+        font-size: 1.2rem;
+        padding: 5px;
         display: block;
-        width: 80%;
-        text-align: center;
-        background: white;
-        color: black;
-        border-radius: 8px;
-        padding: 10px;
     }
 
-    /* ===== HERO ===== */
-    h1 {
-        font-size: 32px;
-        padding: 10px;
-    }
-
-    .hero {
-        padding: 30px 10px;
-    }
-
-    /* ===== INFO ===== */
-    .info {
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    /* ===== FEATURES (VIKTIGASTE FIXEN) ===== */
     .features {
         flex-direction: column;
-        align-items: center;
         gap: 20px;
         padding: 10px;
-        width: 100%;
     }
+
+
 
     .Övningar,
     .FärdigaSchema,
     .Kost {
-        width: 95%;
-        max-width: 350px;
+        width: 90%;
+        max-width: 420px;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
-    /* ===== BOXAR ===== */
     #Infokost,
     #infoFärdigschema,
     #InfoÖvningar {
         width: 100%;
-        max-width: 350px;
+        max-width: 420px;
+        margin: 0 auto;
         height: auto;
-        min-height: 250px;
+        min-height: 280px;
+        background-position: center;
+        background-size: cover;
     }
 
-    /* ===== LÄNKAR I BOXAR ===== */
     #InfoÖvningar a,
     #infoFärdigschema a,
     #Infokost a {
-        margin-top: 20px;
+        margin-top: 12px;
         width: 80%;
+        max-width: 260px;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    footer {
+        margin-top: 0;
+
     }
 }

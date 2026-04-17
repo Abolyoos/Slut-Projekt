@@ -6,8 +6,6 @@
     display: none;
 }
 
-
-
 body {
     background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
     background-size: cover;
@@ -15,11 +13,7 @@ body {
     margin-top: 80px;
 }
 
-#nav li:first-child a {
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-}
+
 
 header {
     position: fixed;
@@ -29,30 +23,11 @@ header {
 
 }
 
-.logo img {
-    padding: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 20px;
-}
-
-.logo {
-    position: absolute;
-    left: 10px;
-}
-
-.info {
-    text-align: center;
+#nav li:nth-child(2) a {
     color: white;
-    padding: 15px;
+    border-radius: 5px;
+    text-decoration: underline;
 }
-
-.info h1 {
-    padding-bottom: 15px;
-}
-
-
-
 
 ul {
     display: flex;
@@ -74,6 +49,8 @@ li a {
     padding: 10px;
     border-style: solid;
     border-color: transparent;
+    font-size: 20px;
+
 }
 
 li a:hover {
@@ -87,6 +64,36 @@ li a:hover {
 li a:active {
     color: rgba(255, 255, 255, 30%);
 
+}
+
+.logo {
+    position: absolute;
+    display: flex;
+    left: 10px;
+    bottom: 20px;
+    font-size: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 2px;
+}
+
+span {
+    color: green;
+    background-color: white;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.info {
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+.info h1 {
+    padding-bottom: 15px;
 }
 
 .main {
@@ -141,4 +148,120 @@ li a:active {
     color: black;
     padding: 15px;
     border-radius: 5px;
+}
+
+footer {
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 40px 20px;
+    margin-top: 90px;
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+    text-align: center;
+
+}
+
+.footer h3 {
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer h4 {
+    color: green;
+}
+
+.sociala-medier a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: flex-end;
+        top: 15px;
+    }
+
+    .logo {
+        position: absolute;
+    }
+
+    .mobile-toggle {
+        display: block;
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        transition: transform .2s;
+        z-index: 1000;
+    }
+
+    .mobile-toggle:hover {
+        transform: scale(1.2);
+    }
+
+    #nav {
+        display: none;
+        position: absolute;
+        justify-content: center;
+        right: 0;
+        top: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-bottom-left-radius: 15px;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    #nav li:nth-child(2) a {
+        color: black;
+
+    }
+
+
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li a {
+        color: black;
+        background-color: white;
+        text-align: center;
+
+    }
+
+    li a:hover {
+        padding: none;
+        color: black;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+
+    }
+
+    #nav.show-mobile {
+        display: flex;
+    }
+
+    #nav ul {
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+    }
+
+    #nav li a {
+        font-size: 1.2rem;
+        padding: 5px;
+        display: block;
+    }
 }

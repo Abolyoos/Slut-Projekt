@@ -75,7 +75,6 @@ window.addEventListener("scroll", function () {
     if (currentScroll === 0) {
         header.style.background = "none";
     }
-
     else if (currentScroll > lastScroll) {
         // Scrollar ner → göm navbar
         header.style.top = "-80px";
