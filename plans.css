@@ -7,11 +7,17 @@
     display: none;
 }
 
+/* ...existing code... */
+
 body {
     color: white;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
+    /* Fixed on desktop for consistent placement; mobile override below */
+    background-attachment: fixed;
     min-height: 100vh;
     margin-top: 80px;
 }
@@ -26,7 +32,7 @@ header {
 
 ul {
     display: flex;
-    gap: 150px;
+    gap: 12vw;
     justify-content: center;
 
 }
@@ -46,8 +52,9 @@ li a {
     font-size: 20px;
 }
 
-#nav li:nth-child(1) {
+#nav li:nth-child(1) a {
     text-decoration: underline;
+    color: purple;
 }
 
 li a:hover {
@@ -69,7 +76,7 @@ li a:active {
     left: 10px;
     bottom: 20px;
     font-size: 20px;
-    background-color: blue;
+    background-color: purple;
     color: white;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -78,7 +85,7 @@ li a:active {
 }
 
 span {
-    color: blue;
+    color: purple;
     background-color: white;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
@@ -103,8 +110,8 @@ span {
 }
 
 .plan-card {
-    background-color: rgba(51, 39, 88, 0.7);
-    border: 1px solid blue;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid purple;
     border-radius: 10px;
     padding: 25px;
     width: 300px;
@@ -114,11 +121,11 @@ span {
 
 .plan-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(208, 0, 255, 0.3);
 }
 
 .plan-card h3 {
-    color: blue;
+    color: purple;
     margin-bottom: 15px;
 }
 
@@ -136,16 +143,16 @@ span {
 }
 
 .tips-box {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     margin-bottom: 20px;
-    border-left: 5px solid blue;
-    border-right: 5px solid blue;
+    border-left: 5px solid purple;
+    border-right: 5px solid purple;
 
 }
 
 .tips-box h3 {
-    color: blue;
+    color: purple;
     margin-bottom: 10px;
 }
 
@@ -155,18 +162,18 @@ footer {
     color: white;
     padding: 40px 20px;
     margin-top: 90px;
-    border-top: 2px solid blue;
-    border-bottom: 2px solid blue;
+    border-top: 2px solid purple;
+    border-bottom: 2px solid purple;
     text-align: center;
 }
 
-.footer h3{
-    font-size:25px;
+.footer h3 {
+    font-size: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .footer h4 {
-    color: blue;
+    color: purple;
 }
 
 .sociala-medier a {
@@ -177,6 +184,17 @@ footer {
 
 @media (max-width: 768px) {
 
+    /*This insures that when the width becomes smaller the page view does not become smaller aswell.*/
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Mobile: avoid fixed background which can jump/perform poorly */
+    body {
+        background-attachment: scroll;
+    }
+
     header {
         display: flex;
         justify-content: flex-end;
@@ -185,6 +203,11 @@ footer {
 
     .logo {
         position: absolute;
+
+    }
+
+    #menu-btn {
+        margin-bottom: 3.5px;
     }
 
     /*Visar hamburger knappen*/
@@ -208,7 +231,7 @@ footer {
 
     #nav {
         display: none;
-        position: absolute;
+        position: fixed;
         justify-content: center;
         right: 0;
         top: 81px;
@@ -232,6 +255,13 @@ footer {
     li a {
         color: black;
         background-color: white;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    li a:active{
+        color: black;
+        background-color: rgba(255, 255, 255, 0.5);
         text-align: center;
         border-radius: 5px;
     }
@@ -265,8 +295,9 @@ footer {
         box-sizing: border-box;
     }
 
-    html, body {
-        overflow-x: hidden;
-    }
+    /*This insures that when the width becomes smaller the page view does not become smaller aswell.*/
+
+
+
 
 }

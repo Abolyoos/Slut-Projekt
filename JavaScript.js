@@ -79,8 +79,6 @@ window.addEventListener("scroll", function () {
         // Scrollar ner → göm navbar
         header.style.top = "-80px";
 
-
-
     } else {
         // Scrollar upp → visa navbar
         header.style.top = "0";

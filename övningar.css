@@ -6,10 +6,16 @@
     display: none;
 }
 
+/* ...existing code... */
+
 body {
     background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 500px;
+    /* Fixed on desktop for steady placement; mobile override below */
+    background-attachment: fixed;
+    min-height: 100vh;
     margin-top: 80px;
 }
 
@@ -24,14 +30,14 @@ header {
 }
 
 #nav li:nth-child(2) a {
-    color: white;
+    color: blue;
     border-radius: 5px;
     text-decoration: underline;
 }
 
 ul {
     display: flex;
-    gap: 150px;
+    gap: 12vw;
     justify-content: center;
 
 }
@@ -43,6 +49,8 @@ li {
 
 }
 
+
+
 li a {
     text-decoration: none;
     color: white;
@@ -50,6 +58,7 @@ li a {
     border-style: solid;
     border-color: transparent;
     font-size: 20px;
+
 
 }
 
@@ -72,7 +81,7 @@ li a:active {
     left: 10px;
     bottom: 20px;
     font-size: 20px;
-    background-color: green;
+    background-color: Blue;
     color: white;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -80,7 +89,7 @@ li a:active {
 }
 
 span {
-    color: green;
+    color: blue;
     background-color: white;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
@@ -102,8 +111,14 @@ span {
     justify-content: center;
 }
 
+main img {
+    border: dotted white 2px;
+    border-radius: 5px;
+}
+
 .övning1 h1 {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .övning1,
@@ -121,7 +136,20 @@ span {
     padding: 20px;
     padding-top: 0.05px;
     color: white;
+    border: blue solid;
 }
+
+.övning2 h1,
+.övning3 h1,
+.övning4 h1,
+.övning5 h1,
+.övning6 h1,
+.övning7 h1,
+.övning8 h1 {
+    margin-bottom: 10px;
+}
+
+
 
 .övning1 img,
 .övning2 img,
@@ -133,7 +161,6 @@ span {
 .övning8 img {
     width: 250px;
     height: 300px;
-
 }
 
 .övning1 figcaption,
@@ -144,10 +171,17 @@ span {
 .övning6 figcaption,
 .övning7 figcaption,
 .övning8 figcaption {
-    background-color: white;
-    color: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
     padding: 15px;
     border-radius: 5px;
+    border-left: blue 4px solid;
+    border-right: blue 4px solid;
+    transition: transform 0.3s ease;
+}
+
+[class^="övning"] figcaption:hover {
+    transform: translateY(-5px);
 }
 
 footer {
@@ -156,8 +190,8 @@ footer {
     color: white;
     padding: 40px 20px;
     margin-top: 90px;
-    border-top: 2px solid green;
-    border-bottom: 2px solid green;
+    border-top: 2px solid blue;
+    border-bottom: 2px solid blue;
     text-align: center;
 
 }
@@ -168,7 +202,7 @@ footer {
 }
 
 .footer h4 {
-    color: green;
+    color: blue;
 }
 
 .sociala-medier a {
@@ -186,6 +220,10 @@ footer {
 
     .logo {
         position: absolute;
+    }
+
+    #menu-btn {
+        margin-bottom: 3.5px;
     }
 
     .mobile-toggle {
@@ -223,6 +261,11 @@ footer {
 
     }
 
+    /* Mobile: switch background to scroll to avoid weird rendering on some devices */
+    body {
+        background-attachment: scroll;
+    }
+
 
     ul {
         display: flex;
@@ -240,13 +283,11 @@ footer {
 
     }
 
-    li a:hover {
-        padding: none;
+    li a:active {
         color: black;
-        background-color: white;
-        padding: 10px;
-        border-radius: 10px;
-
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        border-radius: 5px;
     }
 
     #nav.show-mobile {
@@ -264,4 +305,15 @@ footer {
         padding: 5px;
         display: block;
     }
+
+    body {
+        background-attachment: scroll;
+    }
+
+    /*This insures that when the width becomes smaller the page view does not become smaller aswell.*/
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
 }
