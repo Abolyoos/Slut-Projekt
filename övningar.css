@@ -212,6 +212,16 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    /*This insures that when the width becomes smaller the page view does not become smaller aswell.*/
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body {
+        background-attachment: fixed;
+    }
     header {
         display: flex;
         justify-content: flex-end;
@@ -257,14 +267,11 @@ footer {
     }
 
     #nav li:nth-child(2) a {
-        color: black;
+        color: blue;
 
     }
 
-    /* Mobile: switch background to scroll to avoid weird rendering on some devices */
-    body {
-        background-attachment: scroll;
-    }
+   
 
 
     ul {
@@ -305,15 +312,4 @@ footer {
         padding: 5px;
         display: block;
     }
-
-    body {
-        background-attachment: scroll;
-    }
-
-    /*This insures that when the width becomes smaller the page view does not become smaller aswell.*/
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
 }

@@ -4,8 +4,8 @@ function Övnignar() {
     var knapp1 = document.getElementById("knapp1");
     var InfoÖvningar = document.getElementById("InfoÖvningar");
     if (InfoÖvningar.hidden) {
-        knapp1.innerText = "Stäng"
         InfoÖvningar.removeAttribute("hidden");
+        knapp1.innerText="Stäng";
     }
     else {
         knapp1.innerText = "Läs mer";
@@ -77,12 +77,12 @@ window.addEventListener("scroll", function () {
     }
     else if (currentScroll > lastScroll) {
         // Scrollar ner → göm navbar
-        header.style.top = "-80px";
+        header.style.top = "-85px";
 
     } else {
         // Scrollar upp → visa navbar
         header.style.top = "0";
-                header.style.background = "black";
+        header.style.background = "rgba(0,0,0,0.9)";
 
     }
 
