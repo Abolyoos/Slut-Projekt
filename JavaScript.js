@@ -5,7 +5,7 @@ function Övnignar() {
     var InfoÖvningar = document.getElementById("InfoÖvningar");
     if (InfoÖvningar.hidden) {
         InfoÖvningar.removeAttribute("hidden");
-        knapp1.innerText="Stäng";
+        knapp1.innerText = "Stäng";
     }
     else {
         knapp1.innerText = "Läs mer";
@@ -48,7 +48,6 @@ function Kost() {
 }
 
 /**Hamburger meny*/
-
 function ShowMeny() {
     var knapp = document.getElementById("knapp");
     var meny = document.getElementById("Meny");
@@ -88,3 +87,94 @@ window.addEventListener("scroll", function () {
 
     lastScroll = currentScroll;
 });
+
+let chosengender = "";
+
+function Male() {
+    chosengender = "male";
+    document.getElementById("male").style.backgroundColor = "white";
+    document.getElementById("female").style.backgroundColor = "";
+}
+
+function Female() {
+    chosengender = "female";
+    document.getElementById("female").style.backgroundColor = "white";
+    document.getElementById("male").style.backgroundColor = "";
+}
+
+function CalculateIntake() {
+    const age = parseFloat(document.getElementById("age").value);
+    const weight = parseFloat(document.getElementById("weight").value);
+    const height = parseFloat(document.getElementById("height").value);
+    const displayIntake = document.getElementById("displayIntake");
+
+    if (chosengender==="") {
+        displayIntake.innerText="Välj kön först";
+    }
+
+    if (chosengender === "male") {
+        const bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        displayIntake.innerText = bmr + " Kcal/dag för men";
+    } else if (chosengender === "female") {
+        const bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        displayIntake.innerText = bmr + " Kcal/dag för kvinnor";
+
+    }
+}
+
+function ClearInputs() {
+    chosengender="";
+
+    const age = document.getElementById("age");
+    const weight = document.getElementById("weight");
+    const height = document.getElementById("height");
+
+    const displayIntake = document.getElementById("displayIntake");
+
+    document.getElementById("male").style.backgroundColor = "";
+    document.getElementById("female").style.backgroundColor = "";
+
+    age.value = "";
+    weight.value = "";
+    height.value = "";
+
+    displayIntake.innerText = "Din dagliga intag";
+
+}
+
+
+/**
+function Male() {
+    const age = parseFloat(document.getElementById("age").value);
+    const weight = parseFloat(document.getElementById("weight").value);
+    const height = parseFloat(document.getElementById("height").value);
+    const displayIntake = document.getElementById("displayIntake");
+
+    const bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+    displayIntake.innerText = bmr + " Kcal/dag";
+}
+
+function Female() {
+    const age = parseFloat(document.getElementById("age").value);
+    const weight = parseFloat(document.getElementById("weight").value);
+    const height = parseFloat(document.getElementById("height").value);
+    const displayIntake = document.getElementById("displayIntake");
+
+    const bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+    displayIntake.innerText = bmr + " Kcal/dag";
+
+
+}
+
+function ClearInputs() {
+    const age = document.getElementById("age");
+    const weight = document.getElementById("weight");
+    const height = document.getElementById("height");
+
+    age.value = "";
+    weight.value="";
+    height.value="";
+    displayIntake.innerText="Din dagliga intag";
+}
+
+ */

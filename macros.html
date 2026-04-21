@@ -64,7 +64,30 @@
         <h3>ViktUppgång (kaloriöverskott)</h3>
         <p>För att bygga muskler behöver kroppen ett överskott. Ät 200-300 kcal mer än din förbrukning och fokusera på
             högt protein och kolhydratintag för att maximera muskel byggning och minimera ökning i kropps fett.</p>
-
+    </section>
+    <section class="daily-intake">
+        <h4>Här kan du kalkulera din dagliga intag av kalorier. Börja med att välja kön och sedan välj fyll på med din information. Du kan också nollställa allt genom att trycka på "nollställ."
+        </h4>
+        <div class="gender">
+            <h4>Kön</h4>
+            <button id="male" onclick="Male()">Man</button>
+            <button id="female" onclick="Female()">Kvinna</button>
+        </div>
+        <div class="age">
+            <h4>Ålder</h4>
+            <input id="age" type="text">
+        </div>
+        <div class="weight">
+            <h4>Vikt</h4>
+            <input id="weight" type="text">
+        </div>
+        <div class="height">
+            <h4>Längd</h4>
+            <input id="height" type="text">
+        </div>
+        <p id="displayIntake">Din dagliga intag</p>
+        <button onclick="CalculateIntake()" id="calculateIntake">Kalkulera</button>
+        <button class="clear" onclick="ClearInputs()">Nollställ</button>
     </section>
     <footer class="footer">
         <h3>Kontakt information</h3>
