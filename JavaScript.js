@@ -89,6 +89,57 @@ window.addEventListener("scroll", function () {
 });
 
 let chosengender = "";
+let userActivity = 0;
+
+function Sedentary() {
+    userActivity = 1.2;
+    document.getElementById("sedBtn").style.backgroundColor = "green";
+    document.getElementById("lightBtn").style.backgroundColor = "";
+    document.getElementById("modBtn").style.backgroundColor = "";
+    document.getElementById("hevBtn").style.backgroundColor = "";
+    document.getElementById("athBtn").style.backgroundColor = "";
+
+
+
+
+
+}
+
+function Light() {
+    userActivity = 1.375;
+    document.getElementById("sedBtn").style.backgroundColor = "";
+    document.getElementById("lightBtn").style.backgroundColor = "green";
+    document.getElementById("modBtn").style.backgroundColor = "";
+    document.getElementById("hevBtn").style.backgroundColor = "";
+    document.getElementById("athBtn").style.backgroundColor = "";
+}
+
+function Moderate() {
+    userActivity = 1.55;
+    document.getElementById("sedBtn").style.backgroundColor = "";
+    document.getElementById("lightBtn").style.backgroundColor = "";
+    document.getElementById("modBtn").style.backgroundColor = "green";
+    document.getElementById("hevBtn").style.backgroundColor = "";
+    document.getElementById("athBtn").style.backgroundColor = "";
+}
+
+function Heavy() {
+    userActivity = 1.725;
+    document.getElementById("sedBtn").style.backgroundColor = "";
+    document.getElementById("lightBtn").style.backgroundColor = "";
+    document.getElementById("modBtn").style.backgroundColor = "";
+    document.getElementById("hevBtn").style.backgroundColor = "green";
+    document.getElementById("athBtn").style.backgroundColor = "";
+}
+
+function Athlete() {
+    userActivity = 1.9;
+    document.getElementById("sedBtn").style.backgroundColor = "";
+    document.getElementById("lightBtn").style.backgroundColor = "";
+    document.getElementById("modBtn").style.backgroundColor = "";
+    document.getElementById("hevBtn").style.backgroundColor = "";
+    document.getElementById("athBtn").style.backgroundColor = "green";
+}
 
 function Male() {
     chosengender = "male";
@@ -106,12 +157,52 @@ function CalculateIntake() {
     const age = parseFloat(document.getElementById("age").value);
     const weight = parseFloat(document.getElementById("weight").value);
     const height = parseFloat(document.getElementById("height").value);
-    const displayIntake = document.getElementById("displayIntake");
+    const displayKcal = document.getElementById("displdayKcal");
+    const displayCarb=document.getElementById("displayCarb");
+    const displayProtien=document.getElementById("displayProtien");
+    const displayFat=document.getElementById("displayFat");
 
-    if (chosengender==="") {
-        displayIntake.innerText="Välj kön först";
+    const userDailyIntake=document.getElementById("userDailyIntake");
+
+    if (chosengender === "") {
+        userDailyIntake.innerText = "Välj kön först";
+        return;
+    }
+    if (userActivity === 0) {
+        userDailyIntake.innerText = "Välj aktivitetsnivå!";
+        return;
+    }
+    if (!age || !weight || !height) {
+        userDailyIntake.innerText = "Fyll i alla fält!";
+        return;
     }
 
+    let bmr = 0;
+    if (chosengender === "male") {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+    } else {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+    }
+
+    /**Fix macro display  (Kilo Kalorier*/
+    const totalKcalories = Math.round(bmr * userActivity);
+
+    const protienGrams=Math.round(weight*2);
+    const protienKcal=Math.round(protienGrams*4);
+
+    const fatKcal=Math.round(totalKcalories*0.25);
+    const fatGram=Math(fatKcal/9);
+
+    const remainingKcalories=Math.round(totalKcalories-protienKcal-fatKcal);
+    const carbGrams=Math.round(remainingKcalories/4);
+
+    displayKcal.innerText = totalKcalories + " Kcal/dag";
+    displayCarb.innerText=carbGrams+" Kolhydrater/dag";
+    displayProtien.innerText=protienGrams+" Protien/dag";
+    displayFat.innerText=fatGram+" Fett/dag";
+     
+
+    /**
     if (chosengender === "male") {
         const bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
         displayIntake.innerText = bmr + " Kcal/dag för men";
@@ -120,16 +211,23 @@ function CalculateIntake() {
         displayIntake.innerText = bmr + " Kcal/dag för kvinnor";
 
     }
+         */
 }
 
 function ClearInputs() {
-    chosengender="";
+    document.getElementById("sedBtn").style.backgroundColor = "";
+    document.getElementById("lightBtn").style.backgroundColor = "";
+    document.getElementById("modBtn").style.backgroundColor = "";
+    document.getElementById("hevBtn").style.backgroundColor = "";
+    document.getElementById("athBtn").style.backgroundColor = "";
+    chosengender = "";
+    userActivity=0;
 
     const age = document.getElementById("age");
     const weight = document.getElementById("weight");
     const height = document.getElementById("height");
 
-    const displayIntake = document.getElementById("displayIntake");
+    const displayKcal = document.getElementById("displayKcal");
 
     document.getElementById("male").style.backgroundColor = "";
     document.getElementById("female").style.backgroundColor = "";
@@ -138,8 +236,17 @@ function ClearInputs() {
     weight.value = "";
     height.value = "";
 
-    displayIntake.innerText = "Din dagliga intag";
+    displayKcal.innerText = "Din dagliga intag";
 
+}
+/**Kanske fixar någon dag */
+function DisplayActivityLevel() {
+    if (activityChoice.hidden) {
+        activityChoice.removeAttribute("hidden");
+        activityChoiceBtn.innerText = "Stäng";
+    } else {
+        activityChoice.hidden = true;
+    }
 }
 
 

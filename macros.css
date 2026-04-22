@@ -26,7 +26,6 @@ header {
     top: 0;
     width: 100%;
     transition: top 0.3s, background 1s;
-
 }
 
 #nav li:nth-child(3) a {
@@ -151,31 +150,39 @@ section {
     border-right: 5px solid green;
     padding: 20px;
     display: grid;
-    place-items:center;
+    place-items: center;
     margin-right: auto;
     margin-left: auto;
     gap: 20px;
 }
 
-.daily-intake h4{
+.daily-intake-info {
+    max-width: 500px;
+}
+
+.daily-intake h4 {
     text-align: center;
 }
 
 
-.daily-intake input{
-    cursor: pointer;
-}
 
-.daily-intake button:hover{
+.daily-intake button:hover {
     background-color: rgb(0, 100, 0);
 }
 
-.gender button{
+.gender button {
     background-color: green;
     cursor: pointer;
+    padding: 10px;
 }
 
-#displayIntake{
+#activityChoice{
+    background-color: green;
+    display: grid;
+    grid-template-columns: repeat(3.1fr);
+}
+
+#displayIntake {
     background-color: white;
     color: black;
     padding: 10px;
@@ -183,9 +190,17 @@ section {
     border-radius: 10px;
 }
 
-.clear{
-    width: 200px;
+.calc-reset {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
+
+.calc-reset button{
+    padding: 10px;
+    cursor: pointer;
+}
+
 
 
 
@@ -325,4 +340,6 @@ footer {
         margin: 0 auto;
         box-sizing: border-box;
     }
+
+
 }

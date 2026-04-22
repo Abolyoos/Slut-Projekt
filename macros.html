@@ -61,33 +61,55 @@
             Sikta på ett underskott på 300-500kcal för en bra och hållbar viktnedgång.
         </p>
         <br>
-        <h3>ViktUppgång (kaloriöverskott)</h3>
+        <h3>Viktuppgång (kaloriöverskott)</h3>
         <p>För att bygga muskler behöver kroppen ett överskott. Ät 200-300 kcal mer än din förbrukning och fokusera på
             högt protein och kolhydratintag för att maximera muskel byggning och minimera ökning i kropps fett.</p>
     </section>
     <section class="daily-intake">
-        <h4>Här kan du kalkulera din dagliga intag av kalorier. Börja med att välja kön och sedan välj fyll på med din information. Du kan också nollställa allt genom att trycka på "nollställ."
-        </h4>
+        <div class="daily-intake-info">
+            <h4>Här kan du kalkulera din dagliga intag av kalorier. Börja med att välja kön och sedan välj fyll på med
+                din information. Du kan också nollställa allt genom att trycka på "nollställ."
+            </h4>
+        </div>
         <div class="gender">
             <h4>Kön</h4>
             <button id="male" onclick="Male()">Man</button>
             <button id="female" onclick="Female()">Kvinna</button>
+        </div>
+        <div class="acitivity-level">
+            <button onclick="DisplayActivityLevel()">Aktivitet</button>
+
+            <div id="activityChoice" hidden>
+                <button id="sedBtn" onclick="Sedentary()">Stillstående (kontorsjobb)</button>
+                <button id="lightBtn" onclick="Light()">Lätt träning (1-2 dagar/vecka)</button>
+                <button id="modBtn" onclick="Moderate()">Måttlig träning (3-5 dagar/vecka)</button>
+                <button id="hevBtn" onclick="Heavy()">Hård träning (6-7 dagar/vecka) </button>
+                <button id="athBtn" onclick="Athlete()">Idrottare (2x per dag)</button>
+            </div>
         </div>
         <div class="age">
             <h4>Ålder</h4>
             <input id="age" type="text">
         </div>
         <div class="weight">
-            <h4>Vikt</h4>
+            <h4>Vikt (kg)</h4>
             <input id="weight" type="text">
         </div>
         <div class="height">
-            <h4>Längd</h4>
+            <h4>Längd (cm)</h4>
             <input id="height" type="text">
         </div>
-        <p id="displayIntake">Din dagliga intag</p>
-        <button onclick="CalculateIntake()" id="calculateIntake">Kalkulera</button>
-        <button class="clear" onclick="ClearInputs()">Nollställ</button>
+        <p id="userDailyIntake">Din dagliga intag</p>
+        <div class="macros">
+            <p id="displayKcal">Kalorier:</p>
+            <p id="displayCarb">kolhydrater:</p>
+            <p id="displayProtien">Protein:</p>
+            <p id="displayFat">Fett:</p>
+        </div>
+        <div class="calc-reset">
+            <button style="background-color: green;" onclick="CalculateIntake()" id="calculateIntake">Kalkulera</button>
+            <button style="background-color: red;" class="clear" onclick="ClearInputs()">Nollställ</button>
+        </div>
     </section>
     <footer class="footer">
         <h3>Kontakt information</h3>
