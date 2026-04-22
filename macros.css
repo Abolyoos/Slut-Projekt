@@ -8,14 +8,6 @@
 
 /* ...existing code... */
 
-html {
-    /* Flytta bakgrunden hit för att täcka "hålet" vid stretch */
-    background: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF") no-repeat center center fixed;
-    background-size: cover;
-    background-color: #000; /* Reservfärg */
-    height: 100%;
-}
-
 body {
     background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
     background-position: center center;
@@ -26,14 +18,6 @@ body {
     margin-top: 80px;
     min-height: 100vh;
     color: white;
-    position: sticky;
-    /*Might change*/
-     margin: 0;
-    margin-top: 80px;
-    min-height: 100dvh; /* dynamic viewport height för bättre mobilpassning */
-    color: white;
-    /* Ta bort background härifrån eftersom den nu ligger på html */
-    background: transparent; 
 
 }
 
@@ -210,7 +194,7 @@ section {
     text-align: center;
     display: grid;
     gap: 10px;
-
+    font-size: 15px;
 }
 
 .calc-reset {
@@ -257,13 +241,13 @@ footer {
 
 @media (max-width: 768px) {
 
-    html {
-        background-attachment: fixeds;
+    html,
+    body {
+        overflow-x: hidden;
     }
 
     body {
-        position: relative;
-        overflow-x: hidden;
+        background-attachment: fixed;
     }
 
     header {
@@ -364,5 +348,50 @@ footer {
         box-sizing: border-box;
     }
 
+    .daily-intake-info h4{
+        font-size: 30px;
+    }
 
+    .gender button {
+        cursor: pointer;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .gender h4{
+        font-size: 25px;
+    }
+
+    #activityChoice button{
+        padding: 15px;
+        font-size: 15px;
+    }
+
+    .age,.weight,.height{
+        font-size: 20px;
+    }
+
+    .age input{
+        font-size: 20px;
+    }
+
+    .weight input{
+        font-size: 20px;
+    }
+
+    .height input{
+        font-size: 20px;
+    }
+    #userDailyIntake{
+        font-size: 25px;
+    }
+
+    .macros{
+        font-size: 20px;
+    }
+
+    .calc-reset button{
+        padding: 20px;
+        font-size: 20px;
+    }
 }
