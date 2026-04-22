@@ -18,6 +18,7 @@ body {
     margin-top: 80px;
     min-height: 100vh;
     color: white;
+    position: sticky;
 
 }
 
@@ -171,7 +172,7 @@ section {
 }
 
 .gender button {
-    background-color: green;
+    background-color: rgb(0, 200, 0);
     cursor: pointer;
     padding: 10px;
 }
@@ -188,6 +189,13 @@ section {
     padding: 10px;
     border-style: solid;
     border-radius: 10px;
+}
+
+.macros{
+    text-align: center;
+    display: grid;
+    gap: 10px;
+    
 }
 
 .calc-reset {
