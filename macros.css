@@ -8,6 +8,14 @@
 
 /* ...existing code... */
 
+html {
+    /* Flytta bakgrunden hit för att täcka "hålet" vid stretch */
+    background: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000; /* Reservfärg */
+    height: 100%;
+}
+
 body {
     background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
     background-position: center center;
@@ -19,6 +27,13 @@ body {
     min-height: 100vh;
     color: white;
     position: sticky;
+    /*Might change*/
+     margin: 0;
+    margin-top: 80px;
+    min-height: 100dvh; /* dynamic viewport height för bättre mobilpassning */
+    color: white;
+    /* Ta bort background härifrån eftersom den nu ligger på html */
+    background: transparent; 
 
 }
 
@@ -177,7 +192,7 @@ section {
     padding: 10px;
 }
 
-#activityChoice{
+#activityChoice {
     background-color: green;
     display: grid;
     grid-template-columns: repeat(3.1fr);
@@ -191,11 +206,11 @@ section {
     border-radius: 10px;
 }
 
-.macros{
+.macros {
     text-align: center;
     display: grid;
     gap: 10px;
-    
+
 }
 
 .calc-reset {
@@ -204,7 +219,7 @@ section {
     width: 100%;
 }
 
-.calc-reset button{
+.calc-reset button {
     padding: 10px;
     cursor: pointer;
 }
@@ -242,13 +257,13 @@ footer {
 
 @media (max-width: 768px) {
 
-    html,
-    body {
-        overflow-x: hidden;
+    html {
+        background-attachment: fixeds;
     }
 
     body {
-        background-attachment: fixed;
+        position: relative;
+        overflow-x: hidden;
     }
 
     header {
