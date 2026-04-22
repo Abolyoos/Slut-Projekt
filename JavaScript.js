@@ -1,7 +1,7 @@
 /**Rad 1-59: Informations boxar om sidans olika kategorier*/
 
 function Övnignar() {
-    var knapp1 = document.getElementById("knapp1");
+    knapp1 = document.getElementById("knapp1");
     var InfoÖvningar = document.getElementById("InfoÖvningar");
     if (InfoÖvningar.hidden) {
         InfoÖvningar.removeAttribute("hidden");
@@ -145,6 +145,7 @@ function Male() {
     chosengender = "male";
     document.getElementById("male").style.backgroundColor = "white";
     document.getElementById("female").style.backgroundColor = "";
+
 }
 
 function Female() {
@@ -157,12 +158,16 @@ function CalculateIntake() {
     const age = parseFloat(document.getElementById("age").value);
     const weight = parseFloat(document.getElementById("weight").value);
     const height = parseFloat(document.getElementById("height").value);
-    const displayKcal = document.getElementById("displdayKcal");
-    const displayCarb=document.getElementById("displayCarb");
-    const displayProtien=document.getElementById("displayProtien");
-    const displayFat=document.getElementById("displayFat");
 
-    const userDailyIntake=document.getElementById("userDailyIntake");
+    const displayKcal = document.getElementById("displayKcal");
+    const displayCarb = document.getElementById("displayCarb");
+    const displayProtien = document.getElementById("displayProtien");
+    const displayFat = document.getElementById("displayFat");
+
+    const userKcalInfo = document.getElementById("userKcalInfo");
+    const userBulkInfo = document.getElementById("userBulkInfo");
+    const userCutInfo = document.getElementById("userCutInfo");
+    const userDailyIntake = document.getElementById("userDailyIntake");
 
     if (chosengender === "") {
         userDailyIntake.innerText = "Välj kön först";
@@ -187,20 +192,24 @@ function CalculateIntake() {
     /**Fix macro display  (Kilo Kalorier*/
     const totalKcalories = Math.round(bmr * userActivity);
 
-    const protienGrams=Math.round(weight*2);
-    const protienKcal=Math.round(protienGrams*4);
+    const protienGrams = Math.round(weight * 2);
+    const protienKcal = Math.round(protienGrams * 4);
 
-    const fatKcal=Math.round(totalKcalories*0.25);
-    const fatGram=Math(fatKcal/9);
+    const fatKcal = Math.round(totalKcalories * 0.25);
+    const fatGram = Math.round(fatKcal / 9);
 
-    const remainingKcalories=Math.round(totalKcalories-protienKcal-fatKcal);
-    const carbGrams=Math.round(remainingKcalories/4);
+    const remainingKcalories = Math.round(totalKcalories - protienKcal - fatKcal);
+    const carbGrams = Math.round(remainingKcalories / 4);
 
     displayKcal.innerText = totalKcalories + " Kcal/dag";
-    displayCarb.innerText=carbGrams+" Kolhydrater/dag";
-    displayProtien.innerText=protienGrams+" Protien/dag";
-    displayFat.innerText=fatGram+" Fett/dag";
-     
+    displayCarb.innerText = carbGrams + " Kolhydrater/dag";
+    displayProtien.innerText = protienGrams + " Protien/dag";
+    displayFat.innerText = fatGram + " Fett/dag";
+    userKcalInfo.innerText = "Kalorierna du ska äta för att behålla din nuvarande vikt är " + (totalKcalories);
+    userBulkInfo.innerText = "För att bygga muskler bör du äta" + (totalKcalories + 500);
+    userCutInfo.innerText = "För att gå ner i vikt bör du äta" + (totalKcalories - 500);
+
+
 
     /**
     if (chosengender === "male") {
@@ -221,7 +230,8 @@ function ClearInputs() {
     document.getElementById("hevBtn").style.backgroundColor = "";
     document.getElementById("athBtn").style.backgroundColor = "";
     chosengender = "";
-    userActivity=0;
+    userActivity = 0;
+
 
     const age = document.getElementById("age");
     const weight = document.getElementById("weight");
@@ -237,16 +247,13 @@ function ClearInputs() {
     height.value = "";
 
     displayKcal.innerText = "Din dagliga intag";
+    displayCarb.innerText = "Kalorier:"
+    displayProtien.innerText = "Protien:"
+    displayFat.innerText = "Fett:"
 
-}
-/**Kanske fixar någon dag */
-function DisplayActivityLevel() {
-    if (activityChoice.hidden) {
-        activityChoice.removeAttribute("hidden");
-        activityChoiceBtn.innerText = "Stäng";
-    } else {
-        activityChoice.hidden = true;
-    }
+    userBulkInfo.innerText="";
+    userKcalInfo.innerText="";
+    userCutInfo.innerText="";
 }
 
 

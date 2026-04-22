@@ -77,8 +77,6 @@
             <button id="female" onclick="Female()">Kvinna</button>
         </div>
         <div class="acitivity-level">
-            <button onclick="DisplayActivityLevel()">Aktivitet</button>
-
             <div id="activityChoice" hidden>
                 <button id="sedBtn" onclick="Sedentary()">Stillstående (kontorsjobb)</button>
                 <button id="lightBtn" onclick="Light()">Lätt träning (1-2 dagar/vecka)</button>
@@ -105,6 +103,9 @@
             <p id="displayCarb">kolhydrater:</p>
             <p id="displayProtien">Protein:</p>
             <p id="displayFat">Fett:</p>
+            <p id="userKcalInfo"></p>
+            <p id="userBulkInfo"></p>
+            <p id="userCutInfo"></p>
         </div>
         <div class="calc-reset">
             <button style="background-color: green;" onclick="CalculateIntake()" id="calculateIntake">Kalkulera</button>
