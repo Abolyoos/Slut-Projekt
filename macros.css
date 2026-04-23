@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
 }
@@ -24,8 +22,8 @@ body {
 
 }
 
-body .dark{
-    --text:black;
+body .dark {
+    --text: black;
 
 }
 
@@ -191,10 +189,10 @@ section {
     gap: 10px;
 }
 
-#activityChoice button{
+#activityChoice button {
     border-style: solid;
     border-radius: 10px;
-    padding:10px;
+    padding: 10px;
 }
 
 #displayIntake {
@@ -210,12 +208,12 @@ section {
     display: grid;
     gap: 10px;
     font-size: 15px;
-   
+
 }
 
-#userDailyIntake{
+#userDailyIntake {
     color: white;
-    
+
 }
 
 .calc-reset {
@@ -369,7 +367,7 @@ footer {
         box-sizing: border-box;
     }
 
-    .daily-intake-info h4{
+    .daily-intake-info h4 {
         font-size: 30px;
     }
 
@@ -379,40 +377,50 @@ footer {
         font-size: 20px;
     }
 
-    .gender h4{
+    .gender h4 {
         font-size: 25px;
     }
 
-    #activityChoice button{
+    #activityChoice button {
         padding: 15px;
         font-size: 15px;
     }
 
-    .age,.weight,.height{
+    .age,
+    .weight,
+    .height {
         font-size: 20px;
     }
 
-    .age input{
+    #age,
+    #weight,
+    #height {
+        color: black;
+    }
+
+    .age input {
         font-size: 20px;
     }
 
-    .weight input{
+    .weight input {
         font-size: 20px;
     }
 
-    .height input{
+    .height input {
         font-size: 20px;
     }
-    #userDailyIntake{
+
+    #userDailyIntake {
         font-size: 25px;
     }
 
-    .macros{
+    .macros {
         font-size: 20px;
     }
 
-    .calc-reset button{
+    .calc-reset button {
         padding: 20px;
         font-size: 20px;
+        color: black;
     }
 }
