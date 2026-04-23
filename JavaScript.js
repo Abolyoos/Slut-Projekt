@@ -224,7 +224,7 @@ function CalculateIntake() {
         userDailyIntake.innerText = "Din dagliga intag";
         userDailyIntake.style.color = "white";
         userDailyIntake.style.fontSize = "20px";
-        
+
     }
 
 
@@ -264,7 +264,7 @@ function ClearInputs() {
     userKcalInfo.innerText = "";
     userCutInfo.innerText = "";
 
- 
+
 }
 
 

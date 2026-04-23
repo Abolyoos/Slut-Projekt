@@ -182,12 +182,19 @@ section {
     background-color: rgb(0, 200, 0);
     cursor: pointer;
     padding: 10px;
+    color: black;
 }
 
 #activityChoice {
-    background-color: green;
     display: grid;
     grid-template-columns: repeat(3.1fr);
+    gap: 10px;
+}
+
+#activityChoice button{
+    border-style: solid;
+    border-radius: 10px;
+    padding:10px;
 }
 
 #displayIntake {
