@@ -195,7 +195,7 @@ section {
     padding: 10px;
 }
 
-#activityChoice button:hover{
+#activityChoice button:hover {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
@@ -271,7 +271,8 @@ footer {
 
     body {
         background-attachment: fixed;
-        background-image:url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-mobile.AVIF");
+        background-image: none;
+        background-color: black;
     }
 
     header {

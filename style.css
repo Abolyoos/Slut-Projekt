@@ -272,8 +272,8 @@ footer {
     /* On small screens, fixed backgrounds can behave oddly — switch to scroll */
     body {
         background-attachment: fixed;
-        background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-mobile.AVIF");
-
+        background-image: none;
+        background-color: black;
     }
 
     header {
