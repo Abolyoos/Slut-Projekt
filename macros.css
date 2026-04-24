@@ -10,7 +10,7 @@
 
 body {
     /**/
-    background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
+    background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-dekstop.AVIF");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -172,7 +172,7 @@ section {
 
 
 
-.daily-intake button:hover {
+.gender button:hover {
     background-color: rgb(0, 100, 0);
 }
 
@@ -195,6 +195,10 @@ section {
     padding: 10px;
 }
 
+#activityChoice button:hover{
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
 #displayIntake {
     background-color: white;
     color: black;
@@ -208,7 +212,7 @@ section {
     display: grid;
     gap: 10px;
     font-size: 15px;
-
+    max-width: 200px;
 }
 
 #userDailyIntake {
@@ -267,6 +271,7 @@ footer {
 
     body {
         background-attachment: fixed;
+        background-image:url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-mobile.AVIF");
     }
 
     header {
@@ -412,10 +417,12 @@ footer {
 
     #userDailyIntake {
         font-size: 25px;
+
     }
 
     .macros {
         font-size: 20px;
+        max-width: 200px;
     }
 
     .calc-reset button {

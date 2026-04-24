@@ -9,7 +9,7 @@
 /* ...existing code... */
 
 body {
-    background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
+    background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-dekstop.AVIF");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -221,7 +221,10 @@ footer {
 
     body {
         background-attachment: fixed;
+        background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-mobile.AVIF");
+
     }
+
     header {
         display: flex;
         justify-content: flex-end;
@@ -271,7 +274,7 @@ footer {
 
     }
 
-   
+
 
 
     ul {

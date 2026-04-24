@@ -82,27 +82,25 @@ window.addEventListener("scroll", function () {
 
 /**Macro Tracker */
 
+/**Globala variables */
 let chosengender = "";
 let userActivity = 0;
 
+
+/**Users daily activity */
 function Sedentary() {
     userActivity = 1.2;
-    document.getElementById("sedBtn").style.backgroundColor = "green";
+    document.getElementById("sedBtn").style.backgroundColor = "rgb(0, 200, 0)";
     document.getElementById("lightBtn").style.backgroundColor = "";
     document.getElementById("modBtn").style.backgroundColor = "";
     document.getElementById("hevBtn").style.backgroundColor = "";
     document.getElementById("athBtn").style.backgroundColor = "";
-
-
-
-
-
 }
 
 function Light() {
     userActivity = 1.375;
     document.getElementById("sedBtn").style.backgroundColor = "";
-    document.getElementById("lightBtn").style.backgroundColor = "green";
+    document.getElementById("lightBtn").style.backgroundColor = "rgb(0, 200, 0)";
     document.getElementById("modBtn").style.backgroundColor = "";
     document.getElementById("hevBtn").style.backgroundColor = "";
     document.getElementById("athBtn").style.backgroundColor = "";
@@ -112,7 +110,7 @@ function Moderate() {
     userActivity = 1.55;
     document.getElementById("sedBtn").style.backgroundColor = "";
     document.getElementById("lightBtn").style.backgroundColor = "";
-    document.getElementById("modBtn").style.backgroundColor = "green";
+    document.getElementById("modBtn").style.backgroundColor = "rgb(0, 200, 0)";
     document.getElementById("hevBtn").style.backgroundColor = "";
     document.getElementById("athBtn").style.backgroundColor = "";
 }
@@ -122,7 +120,7 @@ function Heavy() {
     document.getElementById("sedBtn").style.backgroundColor = "";
     document.getElementById("lightBtn").style.backgroundColor = "";
     document.getElementById("modBtn").style.backgroundColor = "";
-    document.getElementById("hevBtn").style.backgroundColor = "green";
+    document.getElementById("hevBtn").style.backgroundColor = "rgb(0, 200, 0)";
     document.getElementById("athBtn").style.backgroundColor = "";
 }
 
@@ -132,22 +130,31 @@ function Athlete() {
     document.getElementById("lightBtn").style.backgroundColor = "";
     document.getElementById("modBtn").style.backgroundColor = "";
     document.getElementById("hevBtn").style.backgroundColor = "";
-    document.getElementById("athBtn").style.backgroundColor = "green";
+    document.getElementById("athBtn").style.backgroundColor = "rgb(0, 200, 0)";
 }
 
+
+/**If chosen gender is male */
 function Male() {
     chosengender = "male";
+
+    const genderChoice = document.getElementById("genderChoice");
+    genderChoice.innerText = ("Man");
+
 
     const maleBtn = document.getElementById("male");
     const femaleBtn = document.getElementById("female");
 
     femaleBtn.style.backgroundColor = "rgb(0,200,0)";
     maleBtn.style.backgroundColor = "rgb(0, 100,0)";
-
 }
 
+/**If chosen gender is female */
 function Female() {
     chosengender = "female";
+
+    const genderChoice = document.getElementById("genderChoice");
+    genderChoice.innerText = ("Kvinna");
 
     const maleBtn = document.getElementById("male");
     const femaleBtn = document.getElementById("female");
@@ -156,6 +163,7 @@ function Female() {
     maleBtn.style.backgroundColor = "rgb(0,200,0)";
 }
 
+/**Calculation of users daily intake */
 function CalculateIntake() {
     const age = parseFloat(document.getElementById("age").value);
     const weight = parseFloat(document.getElementById("weight").value);
@@ -171,6 +179,7 @@ function CalculateIntake() {
     const userCutInfo = document.getElementById("userCutInfo");
     const userDailyIntake = document.getElementById("userDailyIntake");
 
+    /**If no gender was chosen by the user */
     if (chosengender === "") {
         userDailyIntake.innerText = "Välj kön först";
         userDailyIntake.style.color = "red";
@@ -178,24 +187,23 @@ function CalculateIntake() {
         return;
     } else {
 
-
-
+        /**If the value of the users activity level was not changed/(chosen by the user) */
         if (userActivity === 0) {
             userDailyIntake.innerText = "Välj aktivitetsnivå!";
             userDailyIntake.style.color = "red";
             userDailyIntake.style.fontSize = "20px";
-
             return;
         }
 
+        /**If personal information was not found by the program */
         if (!age || !weight || !height) {
             userDailyIntake.innerText = "Fyll i alla fält!";
             userDailyIntake.style.color = "red";
             userDailyIntake.style.fontSize = "20px";
-
             return;
         }
 
+        /**Calculation of the users daily intake */
         let bmr = 0;
         if (chosengender === "male") {
             bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
@@ -226,10 +234,9 @@ function CalculateIntake() {
         userDailyIntake.style.fontSize = "20px";
 
     }
-
-
 }
 
+/**When the user wants to clear the inputs (Reset) */
 function ClearInputs() {
     document.getElementById("sedBtn").style.backgroundColor = "";
     document.getElementById("lightBtn").style.backgroundColor = "";
@@ -238,6 +245,7 @@ function ClearInputs() {
     document.getElementById("athBtn").style.backgroundColor = "";
     chosengender = "";
     userActivity = 0;
+    genderChoice.innerText = "Kön";
 
 
     const age = document.getElementById("age");

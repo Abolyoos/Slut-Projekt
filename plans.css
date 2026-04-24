@@ -12,7 +12,7 @@
 body {
     color: white;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-image: url("Bilder för slut Projekt/övningar-bakgrunds-bild.AVIF");
+    background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-dekstop.AVIF");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -193,6 +193,8 @@ footer {
     /* Mobile: avoid fixed background which can jump/perform poorly */
     body {
         background-attachment: fixed;
+        background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-mobile.AVIF");
+
     }
 
     header {
