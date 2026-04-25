@@ -10,16 +10,16 @@
 
 body {
     /**/
+    color: white;
     background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-dekstop.AVIF");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     /* Fix placement on desktop; mobile will switch to scroll */
-    background-attachment: fixed;
-    margin-top: 80px;
     min-height: 100vh;
-    color: white;
-
+    margin-top: 80px;
+    scroll-behavior: none;
+    overflow-x: hidden;
 }
 
 
