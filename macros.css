@@ -22,10 +22,7 @@ body {
 
 }
 
-body .dark {
-    --text: black;
 
-}
 
 header {
     position: fixed;
@@ -276,6 +273,7 @@ footer {
     }
 
     header {
+        position: absolute;
         display: flex;
         justify-content: flex-end;
         top: 15px;
