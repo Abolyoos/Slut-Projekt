@@ -75,7 +75,6 @@ window.addEventListener("scroll", function () {
         header.style.top = "";
 
         header.style.background = "rgba(0,0,0,0.9)";
-
     }
 
     lastScroll = currentScroll;
@@ -275,6 +274,8 @@ function ClearInputs() {
 
 
 }
+
+
 
 
 

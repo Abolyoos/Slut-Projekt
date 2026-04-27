@@ -310,7 +310,7 @@ footer {
         position: absolute;
         justify-content: center;
         right: 0;
-        top: 100%;
+        top: 81px;
         background-color: rgba(0, 0, 0, 0.9);
         border-bottom-left-radius: 15px;
         box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
