@@ -62,13 +62,9 @@ let lastScroll = 0;
 window.addEventListener("scroll", function () {
     let currentScroll = window.pageYOffset;
     let header = document.querySelector("header");
-    if (currentScroll <= 0) {
-        header.style.top = "";
-        header.style.background = "none";
-        return;
-    }
-    if (window.innerHeight+currentScroll>=this.document.body.offsetHeight) {
-        header.style.top=0;
+    if (currentScroll<=0) {
+        header.style.top="";
+        header.style.background="none";
         return;
     }
     if (currentScroll === 0) {
@@ -82,7 +78,7 @@ window.addEventListener("scroll", function () {
         // Scrollar upp → visa navbar
         header.style.top = "";
 
-        header.style.background = "rgba(0,0,0,0.9)";
+        header.style.background = "rgba(130, 109, 109, 0.9)";
     }
 
     lastScroll = currentScroll;
