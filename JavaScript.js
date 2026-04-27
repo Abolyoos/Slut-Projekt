@@ -77,9 +77,8 @@ window.addEventListener("scroll", function () {
     } else {
         // Scrollar upp → visa navbar
         header.style.top = "";
-
-        header.style.background = "rgba(130, 109, 109, 0.9)";
-    }
+        header.style.background = "rgba(130, 109, 109, 0.8)";
+    }rgba(255, 255, 255, 0.9)
 
     lastScroll = currentScroll;
 });
