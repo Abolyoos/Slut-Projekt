@@ -62,8 +62,10 @@ let lastScroll = 0;
 window.addEventListener("scroll", function () {
     let currentScroll = window.pageYOffset;
     let header = document.querySelector("header");
-
-    if (currentScroll === 0) {
+    if (header.style.top === 0) {
+        return;
+    }
+    else if (currentScroll === 0) {
         header.style.background = "none";
     }
     else if (currentScroll > lastScroll) {
