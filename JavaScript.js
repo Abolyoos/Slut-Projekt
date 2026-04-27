@@ -82,7 +82,7 @@ window.addEventListener("scroll", function () {
     }
     if (window.innerHeight + currentScroll > document.body.offsetHeight) {
         header.style.top = "";
-        return
+        return;
     }
 
     lastScroll = currentScroll;
