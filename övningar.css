@@ -6,27 +6,22 @@
     display: none;
 }
 
-/* ...existing code... */
-
 body {
-    background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-dekstop.AVIF");
+    color: white;
+    background: linear-gradient(black, dimgray);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* Fixed on desktop for steady placement; mobile override below */
-    background-attachment: fixed;
     min-height: 100vh;
     margin-top: 80px;
 }
-
-
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
     transition: top 0.3s, background 1s;
-
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
 #nav li:nth-child(2) a {
@@ -39,17 +34,13 @@ ul {
     display: flex;
     gap: 12vw;
     justify-content: center;
-
 }
 
 li {
     list-style-type: none;
     padding: 20px;
     margin-top: 10px;
-
 }
-
-
 
 li a {
     text-decoration: none;
@@ -58,12 +49,10 @@ li a {
     border-style: solid;
     border-color: transparent;
     font-size: 20px;
-
-
 }
 
 li a:hover {
-    color: rgba(255, 255, 255, 65%);
+    color: rgba(255, 255, 255, 0.65);
     padding: 10px;
     border-radius: 10px;
     border-style: solid;
@@ -71,8 +60,7 @@ li a:hover {
 }
 
 li a:active {
-    color: rgba(255, 255, 255, 30%);
-
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .logo {
@@ -81,7 +69,7 @@ li a:active {
     left: 10px;
     bottom: 20px;
     font-size: 20px;
-    background-color: Blue;
+    background-color: blue;
     color: white;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -107,7 +95,7 @@ span {
 
 .main {
     display: grid;
-    grid-template-columns: repeat(3);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
 }
 
@@ -116,9 +104,10 @@ main img {
     border-radius: 5px;
 }
 
-.övning1 h1 {
+main h2 {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 30px;
 }
 
 .övning1,
@@ -129,27 +118,15 @@ main img {
 .övning6,
 .övning7,
 .övning8 {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: #2f2f2f;
     align-items: column;
     text-align: center;
     width: fit-content;
-    padding: 20px;
+    padding: 40px;
     padding-top: 0.05px;
     color: white;
-    border: blue solid;
+    border: black solid;
 }
-
-.övning2 h1,
-.övning3 h1,
-.övning4 h1,
-.övning5 h1,
-.övning6 h1,
-.övning7 h1,
-.övning8 h1 {
-    margin-bottom: 10px;
-}
-
-
 
 .övning1 img,
 .övning2 img,
@@ -163,21 +140,15 @@ main img {
     height: 300px;
 }
 
-.övning1 figcaption,
-.övning2 figcaption,
-.övning3 figcaption,
-.övning4 figcaption,
-.övning5 figcaption,
-.övning6 figcaption,
-.övning7 figcaption,
-.övning8 figcaption {
-    background-color: rgba(0, 0, 0, 0.3);
+main figcaption {
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 15px;
     border-radius: 5px;
     border-left: blue 4px solid;
     border-right: blue 4px solid;
     transition: transform 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 [class^="övning"] figcaption:hover {
@@ -185,23 +156,21 @@ main img {
 }
 
 footer {
-
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
     color: white;
     padding: 40px 20px;
     margin-top: 90px;
     border-top: 2px solid blue;
     border-bottom: 2px solid blue;
     text-align: center;
-
 }
 
-.footer h3 {
+.footer h2 {
     font-size: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.footer h4 {
+.footer h3 {
     color: blue;
 }
 
@@ -211,17 +180,13 @@ footer {
     display: block;
 }
 
-@media (max-width: 768px) {
-
-    /*This insures that when the width becomes smaller the page view does not become smaller aswell.*/
-    html,
+@media (max-width: 768px){
+      html,
     body {
         overflow-x: hidden;
     }
 
     body {
-        background-attachment: fixed;
-        background-image: none;
         background-color: black;
     }
 
@@ -251,7 +216,7 @@ footer {
         z-index: 1000;
     }
 
-    .mobile-toggle:hover {
+    .mobile-toggle:active {
         transform: scale(1.2);
     }
 
@@ -260,7 +225,7 @@ footer {
         position: absolute;
         justify-content: center;
         right: 0;
-        top: 100%;
+        top: 81px;
         background-color: rgba(0, 0, 0, 0.9);
         border-bottom-left-radius: 15px;
         box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
@@ -268,14 +233,6 @@ footer {
         flex-direction: column;
         padding: 20px 0;
     }
-
-    #nav li:nth-child(2) a {
-        color: blue;
-
-    }
-
-
-
 
     ul {
         display: flex;
@@ -289,14 +246,12 @@ footer {
     li a {
         color: black;
         background-color: white;
-        text-align: center;
-
+        border-radius: 5px;
     }
 
     li a:active {
         color: black;
         background-color: rgba(255, 255, 255, 0.5);
-        text-align: center;
         border-radius: 5px;
     }
 
@@ -314,5 +269,14 @@ footer {
         font-size: 1.2rem;
         padding: 5px;
         display: block;
+    }
+
+    .main{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .main h2{
+        font-size: 22px;
     }
 }

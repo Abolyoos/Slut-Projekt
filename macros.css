@@ -1,38 +1,29 @@
 * {
     margin: 0;
+    text-align: center;
 }
 
 .mobile-toggle {
     display: none;
 }
 
-/* ...existing code... */
-
 body {
-    /**/
-    background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-dekstop.AVIF");
+    background: linear-gradient(black, dimgray);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* Fix placement on desktop; mobile will switch to scroll */
-    background-attachment: fixed;
     margin-top: 80px;
     min-height: 100vh;
     color: white;
-
 }
-
-
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
     transition: top 0.3s, background 1s;
+    background-color: rgba(0, 0, 0, 0.85);
 }
-
-
-
 
 #nav li:nth-child(3) a {
     color: green;
@@ -44,14 +35,12 @@ ul {
     display: flex;
     gap: 12vw;
     justify-content: center;
-
 }
 
 li {
     list-style-type: none;
     padding: 20px;
     margin-top: 10px;
-
 }
 
 li a {
@@ -61,11 +50,10 @@ li a {
     border-style: solid;
     border-color: transparent;
     font-size: 20px;
-
 }
 
 li a:hover {
-    color: rgba(255, 255, 255, 65%);
+    color: rgba(255, 255, 255, 0.65);
     padding: 10px;
     border-radius: 10px;
     border-style: solid;
@@ -73,8 +61,7 @@ li a:hover {
 }
 
 li a:active {
-    color: rgba(255, 255, 255, 30%);
-
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .logo {
@@ -97,15 +84,13 @@ span {
     border-top-right-radius: 5px;
 }
 
-
 .main {
     display: grid;
-    grid-template-columns: repeat(3);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
 }
 
 .info {
-    text-align: center;
     color: white;
     padding: 15px;
 }
@@ -126,22 +111,21 @@ section {
 }
 
 .card {
-    background: rgba(0, 0, 0, 0.7);
+    background: #2f2f2f;
     padding: 20px;
     border: 1px solid green;
     border-radius: 10px;
     width: 250px;
-    text-align: center;
     transition: transform 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: green 2px 0 0;
+    box-shadow: green 2px 0 10px;
 }
 
 .guide-box {
-    background: rgba(0, 0, 0, 0.7);
+    background: #2a2a2a;
     padding: 20px;
     margin: 20px auto;
     max-width: 600px;
@@ -150,7 +134,7 @@ section {
 }
 
 .daily-intake {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #2a2a2a;
     max-width: fit-content;
     border-left: 5px solid green;
     border-right: 5px solid green;
@@ -160,24 +144,31 @@ section {
     margin-right: auto;
     margin-left: auto;
     gap: 20px;
+    align-items: start;
+}
+
+.inputs {
+    display: grid;
+    margin-top: 20px;
+    gap: 20px;
 }
 
 .daily-intake-info {
     max-width: 500px;
 }
 
-.daily-intake h4 {
-    text-align: center;
+.weight h4,
+.height h4,
+.age h4 {
+    text-align: start;
 }
 
-
-
 .gender button:hover {
-    background-color: rgb(0, 100, 0);
+    background-color: darkgreen;
 }
 
 .gender button {
-    background-color: rgb(0, 200, 0);
+    background-color: limegreen;
     cursor: pointer;
     padding: 10px;
     color: black;
@@ -185,7 +176,6 @@ section {
 
 #activityChoice {
     display: grid;
-    grid-template-columns: repeat(3.1fr);
     gap: 10px;
 }
 
@@ -208,7 +198,6 @@ section {
 }
 
 .macros {
-    text-align: center;
     display: grid;
     gap: 10px;
     font-size: 15px;
@@ -217,7 +206,6 @@ section {
 
 #userDailyIntake {
     color: white;
-
 }
 
 .calc-reset {
@@ -231,19 +219,13 @@ section {
     cursor: pointer;
 }
 
-
-
-
 footer {
-
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
     color: white;
     padding: 40px 20px;
     margin-top: 90px;
     border-top: 2px solid green;
     border-bottom: 2px solid green;
-    text-align: center;
-
 }
 
 .footer h3 {
@@ -261,7 +243,6 @@ footer {
     display: block;
 }
 
-
 @media (max-width: 768px) {
 
     html,
@@ -270,13 +251,10 @@ footer {
     }
 
     body {
-        background-attachment: fixed;
-        background-image: none;
         background-color: black;
     }
 
     header {
-        
         display: flex;
         justify-content: flex-end;
         top: 15px;
@@ -290,7 +268,6 @@ footer {
         margin-bottom: 3.5px;
     }
 
-    /*Visar hamburger knappen*/
     .mobile-toggle {
         display: block;
         font-size: 30px;
@@ -307,7 +284,6 @@ footer {
         transform: scale(1.2);
     }
 
-    /*Med hjälp av JS kommer naven synas anorulunda på mobilen*/
     #nav {
         display: none;
         position: absolute;
@@ -334,14 +310,12 @@ footer {
     li a {
         color: black;
         background-color: white;
-        text-align: center;
         border-radius: 5px;
     }
 
     li a:active {
         color: black;
         background-color: rgba(255, 255, 255, 0.5);
-        text-align: center;
         border-radius: 5px;
     }
 
@@ -419,7 +393,6 @@ footer {
 
     #userDailyIntake {
         font-size: 25px;
-
     }
 
     .macros {

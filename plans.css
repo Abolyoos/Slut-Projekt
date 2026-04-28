@@ -1,6 +1,5 @@
 * {
     margin: 0;
-
 }
 
 .mobile-toggle {
@@ -11,13 +10,10 @@
 
 body {
     color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-image: url("Bilder för slut Projekt/slutProjekt.bakgrundsBild-dekstop.AVIF");
+    background: linear-gradient(black, dimgray);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* Fixed on desktop for consistent placement; mobile override below */
-    background-attachment: fixed;
     min-height: 100vh;
     margin-top: 80px;
 }
@@ -27,14 +23,13 @@ header {
     top: 0;
     width: 100%;
     transition: top 0.3s, background 1s;
+    background-color: rgba(0, 0, 0, 0.85);
 }
-
 
 ul {
     display: flex;
     gap: 12vw;
     justify-content: center;
-
 }
 
 li {
@@ -58,7 +53,7 @@ li a {
 }
 
 li a:hover {
-    color: rgba(255, 255, 255, 65%);
+    color: rgba(255, 255, 255, 0.65);
     padding: 10px;
     border-radius: 10px;
     border-style: solid;
@@ -66,8 +61,7 @@ li a:hover {
 }
 
 li a:active {
-    color: rgba(255, 255, 255, 30%);
-
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .logo {
@@ -81,7 +75,6 @@ li a:active {
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 2px;
-
 }
 
 span {
@@ -110,7 +103,7 @@ span {
 }
 
 .plan-card {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #2f2f2f;
     border: 1px solid purple;
     border-radius: 10px;
     padding: 25px;
@@ -121,7 +114,7 @@ span {
 
 .plan-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(208, 0, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(128, 0, 128, 0.4);
 }
 
 .plan-card h3 {
@@ -142,13 +135,21 @@ span {
     padding: 20px;
 }
 
+.tips-box h3 {
+    font-size: 30px;
+}
+
 .tips-box {
-    background: rgba(0, 0, 0, 0.7);
+    background: #2a2a2a;
     padding: 20px;
     margin-bottom: 20px;
     border-left: 5px solid purple;
     border-right: 5px solid purple;
+}
 
+.Progressiv-tip {
+    font-family: fantasy;
+    margin-top: 20px;
 }
 
 .tips-box h3 {
@@ -157,8 +158,7 @@ span {
 }
 
 footer {
-
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
     color: white;
     padding: 40px 20px;
     margin-top: 90px;
@@ -184,16 +184,12 @@ footer {
 
 @media (max-width: 768px) {
 
-    /*This insures that when the width becomes smaller the page view does not become smaller aswell.*/
     html,
     body {
         overflow-x: hidden;
     }
 
-    /* Mobile: avoid fixed background which can jump/perform poorly */
     body {
-        background-attachment: fixed;
-        background-image: none;
         background-color: black;
     }
 
@@ -205,14 +201,11 @@ footer {
 
     .logo {
         position: absolute;
-
     }
 
     #menu-btn {
         margin-bottom: 3.5px;
     }
-
-    /*Visar hamburger knappen*/
 
     .mobile-toggle {
         display: block;
@@ -229,7 +222,6 @@ footer {
     .mobile-toggle:active {
         transform: scale(1.2);
     }
-
 
     #nav {
         display: none;
@@ -296,11 +288,4 @@ footer {
         margin: 0 auto;
         box-sizing: border-box;
     }
-
-
-    /*This insures that when the width becomes smaller the page view does not become smaller aswell.*/
-
-
-
-
 }

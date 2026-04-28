@@ -78,7 +78,7 @@ window.addEventListener("scroll", function () {
     } else {
         // Scrollar upp → visa navbar
         header.style.top = "";
-        header.style.background = "rgba(255, 255, 255, 0.8)";
+        header.style.background = "rgba(0, 0, 0, 0.9)";
     }
     if (window.innerHeight + currentScroll > document.body.offsetHeight) {
         header.style.top = "";
@@ -187,6 +187,8 @@ function CalculateIntake() {
     const userCutInfo = document.getElementById("userCutInfo");
     const userDailyIntake = document.getElementById("userDailyIntake");
 
+
+
     /**If no gender was chosen by the user */
     if (chosengender === "") {
         userDailyIntake.innerText = "Välj kön först";
@@ -212,6 +214,7 @@ function CalculateIntake() {
         }
 
         /**Calculation of the users daily intake */
+        /**BMR stands for Basal Metabolic Rate */
         let bmr = 0;
         if (chosengender === "male") {
             bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
@@ -219,6 +222,8 @@ function CalculateIntake() {
             bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
         }
 
+        /**Calculating the users daily intake
+         * by choosing the recomended amount of daily protien intake. */
         const totalKcalories = Math.round(bmr * userActivity);
 
         const protienGrams = Math.round(weight * 2);
@@ -279,9 +284,9 @@ function ClearInputs() {
     userBulkInfo.innerText = "";
     userKcalInfo.innerText = "";
     userCutInfo.innerText = "";
-
-
 }
+
+
 
 
 
