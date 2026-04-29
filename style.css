@@ -83,7 +83,7 @@ h1 {
     border-color: black;
 }
 
-.hero p{
+.hero p {
     font-size: 29px;
 }
 
@@ -292,7 +292,7 @@ footer {
         position: absolute;
         right: 0;
         top: 81px;
-        background:linear-gradient(black,darkred);
+        background: linear-gradient(black, darkred);
         border-bottom-left-radius: 15px;
         z-index: 999;
         flex-direction: column;
@@ -354,10 +354,16 @@ footer {
     #InfoÖvningar {
         width: 100%;
         max-width: 420px;
-        height: auto;
+        height: 600px;
         min-height: 280px;
         background-position: center;
         background-size: cover;
+    }
+
+    #Infokost a,
+    #infoFärdigschema a,
+    #InfoÖvningar a {
+        right: 75px;
     }
 
     h1 {
