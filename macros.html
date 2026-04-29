@@ -71,13 +71,14 @@
                 din information. Du kan också nollställa allt genom att trycka på "nollställ."
             </h4>
         </div>
-        <div class="gender">
-            <h4 id="genderChoice">Kön</h4>
+        <div class="userTopBtns">
+            <h4 id="userChoice"></h4>
             <button id="male" onclick="Male()">Man</button>
             <button id="female" onclick="Female()">Kvinna</button>
+            <button onclick="MeasurmentSystem()" id="BtnMeasurmentSystem">Metric</button>
         </div>
         <div class="acitivity-level">
-            <div id="activityChoice" hidden>
+            <div id="activityChoice">
                 <button id="sedBtn" onclick="Sedentary()">Stillstående (kontorsjobb)</button>
                 <button id="lightBtn" onclick="Light()">Lätt träning (1-2 dagar/vecka)</button>
                 <button id="modBtn" onclick="Moderate()">Måttlig träning (3-5 dagar/vecka)</button>
@@ -85,17 +86,22 @@
                 <button id="athBtn" onclick="Athlete()">Idrottare (2x per dag)</button>
             </div>
         </div>
-        <div class="age">
-            <h4>Ålder</h4>
-            <input id="age" type="text">
-        </div>
-        <div class="weight">
-            <h4>Vikt (kg)</h4>
-            <input id="weight" type="text">
-        </div>
-        <div class="height">
-            <h4>Längd (cm)</h4>
-            <input id="height" type="text">
+        <div class="userInfo">
+            <div class="age">
+                <h4>Ålder</h4>
+                <input id="age" type="text" placeholder="Ålder">
+            </div>
+            <div class="weight">
+                <h4 id="weightMeasurment">Vikt</h4>
+                <input id="weight" type="text" placeholder="kg">
+            </div>
+            <div class="height">
+                <h4 id="heightMeasurment">Längd</h4>
+                <input id="userHeight" type="text" placeholder="cm">
+
+                <input id="feet" type="text" hidden placeholder="feet">
+                <input id="inches" type="text" hidden placeholder="inches">
+            </div>
         </div>
         <p id="userDailyIntake"></p>
         <div class="macros">

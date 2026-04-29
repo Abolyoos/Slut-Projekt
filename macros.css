@@ -8,7 +8,7 @@
 }
 
 body {
-    background: linear-gradient(black, dimgray);
+    background: linear-gradient(black, darkgreen);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -153,6 +153,14 @@ section {
     gap: 20px;
 }
 
+#feet,#inches{
+    width: 70px;
+}
+/*
+.height input{
+    width: 70px;
+}
+*/
 .daily-intake-info {
     max-width: 500px;
 }
@@ -163,16 +171,29 @@ section {
     text-align: start;
 }
 
-.gender button:hover {
-    background-color: darkgreen;
-}
-
-.gender button {
+.userTopBtns button {
     background-color: limegreen;
     cursor: pointer;
     padding: 10px;
     color: black;
 }
+
+.userTopBtns button:hover {
+    background-color: darkgreen;
+}
+
+.userInfo{
+    display: grid;
+    gap: 20px;
+}
+
+
+
+.userInfo input{
+    text-align: start;
+}
+
+
 
 #activityChoice {
     display: grid;
@@ -290,7 +311,7 @@ footer {
         justify-content: center;
         right: 0;
         top: 81px;
-        background-color: rgba(0, 0, 0, 0.9);
+        background: linear-gradient(black,darkgreen);
         border-bottom-left-radius: 15px;
         box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
         z-index: 999;
@@ -352,13 +373,13 @@ footer {
         font-size: 30px;
     }
 
-    .gender button {
+    .userTopBtns button {
         cursor: pointer;
         padding: 20px;
         font-size: 20px;
     }
 
-    .gender h4 {
+    .userTopBtns h4 {
         font-size: 25px;
     }
 

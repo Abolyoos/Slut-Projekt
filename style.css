@@ -8,7 +8,7 @@
 
 body {
     color: white;
-    background-color: black;
+    background: linear-gradient(black, darkred);
     min-height: 100vh;
     margin-top: 80px;
 }
@@ -25,6 +25,7 @@ ul {
     display: flex;
     gap: 150px;
     justify-content: center;
+
 }
 
 li {
@@ -77,15 +78,22 @@ span {
 
 h1 {
     font-size: 60px;
-    color: red;
+    border-color: black;
+}
+
+.hero p{
+    font-size: 29px;
 }
 
 .info {
     padding: 20px;
     text-align: center;
-    background-color: black;
     border-top: 1px solid red;
     border-bottom: 1px solid red;
+    max-width: 520px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 18px;
 }
 
 
@@ -278,7 +286,7 @@ footer {
         position: absolute;
         right: 0;
         top: 81px;
-        background-color: black;
+        background:linear-gradient(black,darkred);
         border-bottom-left-radius: 15px;
         z-index: 999;
         flex-direction: column;

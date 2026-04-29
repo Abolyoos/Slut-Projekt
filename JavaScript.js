@@ -142,12 +142,12 @@ function Athlete() {
 }
 
 
-/**If chosen gender is male */
+/**If chosen userTopBtns is male */
 function Male() {
     chosengender = "male";
 
-    const genderChoice = document.getElementById("genderChoice");
-    genderChoice.innerText = ("Man");
+    const userChoice = document.getElementById("userChoice");
+    userChoice.innerText = ("Man");
 
 
     const maleBtn = document.getElementById("male");
@@ -157,12 +157,12 @@ function Male() {
     maleBtn.style.backgroundColor = "rgb(0, 100,0)";
 }
 
-/**If chosen gender is female */
+/**If chosen userTopBtns is female */
 function Female() {
     chosengender = "female";
 
-    const genderChoice = document.getElementById("genderChoice");
-    genderChoice.innerText = ("Kvinna");
+    const userChoice = document.getElementById("userChoice");
+    userChoice.innerText = ("Kvinna");
 
     const maleBtn = document.getElementById("male");
     const femaleBtn = document.getElementById("female");
@@ -170,12 +170,51 @@ function Female() {
     femaleBtn.style.backgroundColor = "rgb(0,100,0)";
     maleBtn.style.backgroundColor = "rgb(0,200,0)";
 }
+let measurmentSystem = "metric";
+function MeasurmentSystem() {
+    const feet = document.getElementById("feet");
+    const inches = document.getElementById("inches");
+    const heightMeasurment = document.getElementById("heightMeasurment");
+    const BtnMeasurmentSystem = document.getElementById("BtnMeasurmentSystem");
+    const weightMeasurment = document.getElementById("weightMeasurment");
+    if (measurmentSystem === "metric") {
+        measurmentSystem = "imperial";
+
+        feet.removeAttribute("hidden");
+        inches.removeAttribute("hidden");
+
+        userHeight.hidden = true;
+        weightMeasurment.innerText = ("Vikt");
+        weight.placeholder = "Lbs";
+        heightMeasurment.innerText = "Längd";
+        BtnMeasurmentSystem.innerText = ("Imperal");
+
+    } else if (measurmentSystem === "imperial") {
+        measurmentSystem = "metric";
+
+        feet.hidden = true;
+        inches.hidden = true;
+        userHeight.hidden = false;
+        weightMeasurment.innerText = ("Vikt");
+        weight.placeholder = "kg";
+
+
+
+        heightMeasurment.innerText = ("Längd");
+        BtnMeasurmentSystem.innerText = ("Metric");
+    }
+}
+
+
 
 /**Calculation of users daily intake */
 function CalculateIntake() {
     const age = parseFloat(document.getElementById("age").value);
     const weight = parseFloat(document.getElementById("weight").value);
-    const height = parseFloat(document.getElementById("height").value);
+    const userHeight = parseFloat(document.getElementById("userHeight").value);
+
+    const feet = parseFloat(document.getElementById("feet").value);
+    const inches = parseFloat(document.getElementById("inches").value);
 
     const displayKcal = document.getElementById("displayKcal");
     const displayCarb = document.getElementById("displayCarb");
@@ -187,9 +226,16 @@ function CalculateIntake() {
     const userCutInfo = document.getElementById("userCutInfo");
     const userDailyIntake = document.getElementById("userDailyIntake");
 
+    let height;
+    if (measurmentSystem === "metric") {
+        height = parseFloat(document.getElementById("userHeight").value);
+    } else {
+        const feet = parseFloat(document.getElementById("feet").value);
+        const inches = parseFloat(document.getElementById("inches").value);
+        height = (feet * 12) + inches;
+    }
 
-
-    /**If no gender was chosen by the user */
+    /**If no userTopBtns was chosen by the user */
     if (chosengender === "") {
         userDailyIntake.innerText = "Välj kön först";
         userDailyIntake.style.color = "red";
@@ -216,17 +262,30 @@ function CalculateIntake() {
         /**Calculation of the users daily intake */
         /**BMR stands for Basal Metabolic Rate */
         let bmr = 0;
-        if (chosengender === "male") {
-            bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-        } else {
-            bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        /**Lägger till if sats för metric */
+        if (measurmentSystem === "metric") {
+            if (chosengender === "male") {
+                bmr = (10 * weight) + (6.25 * userHeight) - (5 * age) + 5;
+            } else {
+                bmr = (10 * weight) + (6.25 * userHeight) - (5 * age) - 161;
+            }
+        } else if (measurmentSystem === "imperial") {
+            if (chosengender === "male") {
+                bmr = (4.536 * weight) + (15.88 * height) - (4.92 * age) + 5;
+            } else {
+                bmr = (4.536 * weight) + (15.88 * height) - (4.92 * age) - 161;
+            }
         }
+
 
         /**Calculating the users daily intake
          * by choosing the recomended amount of daily protien intake. */
         const totalKcalories = Math.round(bmr * userActivity);
 
-        const protienGrams = Math.round(weight * 2);
+        let protienGrams = Math.round(weight * 2);
+        if (measurmentSystem === "imperial") {
+            protienGrams = Math.round(weight * 0.91);
+        }
         const protienKcal = Math.round(protienGrams * 4);
 
         const fatKcal = Math.round(totalKcalories * 0.25);
@@ -258,12 +317,16 @@ function ClearInputs() {
     document.getElementById("athBtn").style.backgroundColor = "";
     chosengender = "";
     userActivity = 0;
-    genderChoice.innerText = "Kön";
+    userChoice.innerText = "";
 
 
     const age = document.getElementById("age");
     const weight = document.getElementById("weight");
-    const height = document.getElementById("height");
+    const userHeight = document.getElementById("userHeight");
+
+    const feet = document.getElementById("feet");
+    const inches = document.getElementById("inches");
+
 
     const displayKcal = document.getElementById("displayKcal");
 
@@ -272,7 +335,10 @@ function ClearInputs() {
 
     age.value = "";
     weight.value = "";
-    height.value = "";
+    userHeight.value = "";
+    feet.value = "";
+    inches.value = "";
+
 
     userDailyIntake.innerText = "";
 
@@ -286,9 +352,24 @@ function ClearInputs() {
     userCutInfo.innerText = "";
 }
 
+const toggleButton = document.getElementById('theme-toggle');
+const body = document.body;
 
+// 1. Kolla om användaren har valt mörkt läge tidigare (via localStorage)
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+}
 
+// 2. Lyssna på klick
+toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
 
-
+    // 3. Spara valet i webbläsaren
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+});
 
 
