@@ -72,20 +72,22 @@
             </h4>
         </div>
         <div class="userTopBtns">
-            <h4 id="userChoice"></h4>
             <button id="male" onclick="Male()">Man</button>
             <button id="female" onclick="Female()">Kvinna</button>
-            <button onclick="MeasurmentSystem()" id="BtnMeasurmentSystem">Metric</button>
+            <button id="BtnMeasurmentSystem" onclick="MeasurmentSystem()">Metric</button>
         </div>
         <div class="acitivity-level">
             <div id="activityChoice">
-                <button id="sedBtn" onclick="Sedentary()">Stillstående (kontorsjobb)</button>
-                <button id="lightBtn" onclick="Light()">Lätt träning (1-2 dagar/vecka)</button>
-                <button id="modBtn" onclick="Moderate()">Måttlig träning (3-5 dagar/vecka)</button>
-                <button id="hevBtn" onclick="Heavy()">Hård träning (6-7 dagar/vecka) </button>
-                <button id="athBtn" onclick="Athlete()">Idrottare (2x per dag)</button>
+                <select name="activityLevel" id="activityLevel" onchange="updateActivity()">
+                    <option value="1.2">Stillstående (kontorsjobb)</option>
+                    <option value="1.375">Lätt träning (1-2 dagar/vecka)</option>
+                    <option value="1.55">Måttlig träning (3-5 dagar/vecka)</option>
+                    <option value="1.725">Hård träning (6-7 dagar/vecka)</option>
+                    <option value="1.9">Idrottare (2x per dag)</option>
+                </select>
             </div>
         </div>
+        <h4 id="displayMeasurmentSystemType">Metric</h4>
         <div class="userInfo">
             <div class="age">
                 <h4>Ålder</h4>
@@ -99,8 +101,10 @@
                 <h4 id="heightMeasurment">Längd</h4>
                 <input id="userHeight" type="text" placeholder="cm">
 
-                <input id="feet" type="text" hidden placeholder="feet">
-                <input id="inches" type="text" hidden placeholder="inches">
+                <div class="imperialINputs">
+                    <input id="feet" type="text" hidden placeholder="feet">
+                    <input id="inches" type="text" hidden placeholder="inches">
+                </div>
             </div>
         </div>
         <p id="userDailyIntake"></p>
@@ -118,6 +122,9 @@
             <button style="background-color: red;" class="clear" onclick="ClearInputs()">Nollställ</button>
         </div>
     </section>
+
+
+
     <footer class="footer">
         <h3>Kontakt information</h3>
         <h4>Mejl</h4>

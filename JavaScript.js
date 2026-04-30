@@ -94,61 +94,16 @@ window.addEventListener("scroll", function () {
 let chosengender = "";
 let userActivity = 0;
 
+/**If the user is unsure of acitivty */
 
-/**Users daily activity */
-function Sedentary() {
-    userActivity = 1.2;
-    document.getElementById("sedBtn").style.backgroundColor = "rgb(0, 200, 0)";
-    document.getElementById("lightBtn").style.backgroundColor = "";
-    document.getElementById("modBtn").style.backgroundColor = "";
-    document.getElementById("hevBtn").style.backgroundColor = "";
-    document.getElementById("athBtn").style.backgroundColor = "";
+function updateActivity() {
+    const select = document.getElementById("activityLevel");
+    userActivity =parseFloat(select.value);
 }
-
-function Light() {
-    userActivity = 1.375;
-    document.getElementById("sedBtn").style.backgroundColor = "";
-    document.getElementById("lightBtn").style.backgroundColor = "rgb(0, 200, 0)";
-    document.getElementById("modBtn").style.backgroundColor = "";
-    document.getElementById("hevBtn").style.backgroundColor = "";
-    document.getElementById("athBtn").style.backgroundColor = "";
-}
-
-function Moderate() {
-    userActivity = 1.55;
-    document.getElementById("sedBtn").style.backgroundColor = "";
-    document.getElementById("lightBtn").style.backgroundColor = "";
-    document.getElementById("modBtn").style.backgroundColor = "rgb(0, 200, 0)";
-    document.getElementById("hevBtn").style.backgroundColor = "";
-    document.getElementById("athBtn").style.backgroundColor = "";
-}
-
-function Heavy() {
-    userActivity = 1.725;
-    document.getElementById("sedBtn").style.backgroundColor = "";
-    document.getElementById("lightBtn").style.backgroundColor = "";
-    document.getElementById("modBtn").style.backgroundColor = "";
-    document.getElementById("hevBtn").style.backgroundColor = "rgb(0, 200, 0)";
-    document.getElementById("athBtn").style.backgroundColor = "";
-}
-
-function Athlete() {
-    userActivity = 1.9;
-    document.getElementById("sedBtn").style.backgroundColor = "";
-    document.getElementById("lightBtn").style.backgroundColor = "";
-    document.getElementById("modBtn").style.backgroundColor = "";
-    document.getElementById("hevBtn").style.backgroundColor = "";
-    document.getElementById("athBtn").style.backgroundColor = "rgb(0, 200, 0)";
-}
-
 
 /**If chosen userTopBtns is male */
 function Male() {
     chosengender = "male";
-
-    const userChoice = document.getElementById("userChoice");
-    userChoice.innerText = ("Man");
-
 
     const maleBtn = document.getElementById("male");
     const femaleBtn = document.getElementById("female");
@@ -160,9 +115,6 @@ function Male() {
 /**If chosen userTopBtns is female */
 function Female() {
     chosengender = "female";
-
-    const userChoice = document.getElementById("userChoice");
-    userChoice.innerText = ("Kvinna");
 
     const maleBtn = document.getElementById("male");
     const femaleBtn = document.getElementById("female");
@@ -177,6 +129,7 @@ function MeasurmentSystem() {
     const heightMeasurment = document.getElementById("heightMeasurment");
     const BtnMeasurmentSystem = document.getElementById("BtnMeasurmentSystem");
     const weightMeasurment = document.getElementById("weightMeasurment");
+    const displayMeasurmentSystemType = document.getElementById("displayMeasurmentSystemType");
     if (measurmentSystem === "metric") {
         measurmentSystem = "imperial";
 
@@ -187,7 +140,8 @@ function MeasurmentSystem() {
         weightMeasurment.innerText = ("Vikt");
         weight.placeholder = "Lbs";
         heightMeasurment.innerText = "Längd";
-        BtnMeasurmentSystem.innerText = ("Imperal");
+        BtnMeasurmentSystem.innerText = ("Metric");
+        displayMeasurmentSystemType.innerText = ("Imperial");
 
     } else if (measurmentSystem === "imperial") {
         measurmentSystem = "metric";
@@ -198,10 +152,9 @@ function MeasurmentSystem() {
         weightMeasurment.innerText = ("Vikt");
         weight.placeholder = "kg";
 
-
-
         heightMeasurment.innerText = ("Längd");
-        BtnMeasurmentSystem.innerText = ("Metric");
+        BtnMeasurmentSystem.innerText = ("Imperial");
+        displayMeasurmentSystemType.innerText = ("Metric");
     }
 }
 
@@ -213,8 +166,7 @@ function CalculateIntake() {
     const weight = parseFloat(document.getElementById("weight").value);
     const userHeight = parseFloat(document.getElementById("userHeight").value);
 
-    const feet = parseFloat(document.getElementById("feet").value);
-    const inches = parseFloat(document.getElementById("inches").value);
+
 
     const displayKcal = document.getElementById("displayKcal");
     const displayCarb = document.getElementById("displayCarb");
@@ -310,46 +262,34 @@ function CalculateIntake() {
 
 /**When the user wants to clear the inputs (Reset) */
 function ClearInputs() {
-    document.getElementById("sedBtn").style.backgroundColor = "";
-    document.getElementById("lightBtn").style.backgroundColor = "";
-    document.getElementById("modBtn").style.backgroundColor = "";
-    document.getElementById("hevBtn").style.backgroundColor = "";
-    document.getElementById("athBtn").style.backgroundColor = "";
+
+
+
+
+    const buttons = ["sedBtn", "lightBtn", "modBtn", "hevBtn", "athBtn", "male", "female", "activityDeclineBtn"];
+    buttons.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.style.backgroundColor = "";
+    });
+
     chosengender = "";
     userActivity = 0;
-    userChoice.innerText = "";
 
+    const inputs = ["age", "weight", "userHeight", "feet", "inches"];
+    inputs.forEach(id => {
+        const field = document.getElementById(id);
+        if (field) field.value = "";
+    });
 
-    const age = document.getElementById("age");
-    const weight = document.getElementById("weight");
-    const userHeight = document.getElementById("userHeight");
+    const displays = [
+        "displayKcal", "displayCarb", "displayProtien", "displayFat",
+        "userKcalInfo", "userBulkInfo", "userCutInfo", "userDailyIntake"
+    ];
+    displays.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) element.innerText = "";
+    });
 
-    const feet = document.getElementById("feet");
-    const inches = document.getElementById("inches");
-
-
-    const displayKcal = document.getElementById("displayKcal");
-
-    document.getElementById("male").style.backgroundColor = "";
-    document.getElementById("female").style.backgroundColor = "";
-
-    age.value = "";
-    weight.value = "";
-    userHeight.value = "";
-    feet.value = "";
-    inches.value = "";
-
-
-    userDailyIntake.innerText = "";
-
-    displayKcal.innerText = "";
-    displayCarb.innerText = "";
-    displayProtien.innerText = "";
-    displayFat.innerText = "";
-
-    userBulkInfo.innerText = "";
-    userKcalInfo.innerText = "";
-    userCutInfo.innerText = "";
 }
 
 const toggleButton = document.getElementById('theme-toggle');

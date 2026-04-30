@@ -134,112 +134,146 @@ section {
 }
 
 .daily-intake {
-    background-color: #2a2a2a;
-    max-width: fit-content;
-    border-left: 5px solid green;
-    border-right: 5px solid green;
-    padding: 20px;
-    display: grid;
-    place-items: center;
-    margin-right: auto;
-    margin-left: auto;
-    gap: 20px;
-    align-items: start;
+    background: linear-gradient(darkgreen, green, darkgreen);
+    max-width: 600px;
+    /* Gjorde den lite bredare för bättre balans */
+    border-left: 5px solid LimeGreen;
+    border-right: 5px solid LimeGreen;
+    padding: 30px;
+    display: flex;
+    /* Bytte till flex för bättre kontroll */
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto;
+    gap: 25px;
+    border-radius: 15px;
+    /* Mjukare hörn */
 }
 
-.inputs {
-    display: grid;
-    margin-top: 20px;
-    gap: 20px;
+/* Texten i toppen */
+.daily-intake-info h4 {
+    text-align: center;
+    color: White;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0;
 }
 
-#feet,#inches{
-    width: 70px;
-}
-/*
-.height input{
-    width: 70px;
-}
-*/
-.daily-intake-info {
-    max-width: 500px;
-}
-
-.weight h4,
-.height h4,
-.age h4 {
-    text-align: start;
+/* Gruppering för kön och system */
+.userTopBtns {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
 }
 
 .userTopBtns button {
-    background-color: limegreen;
+    background-color: LimeGreen;
+    border: none;
     cursor: pointer;
-    padding: 10px;
-    color: black;
+    padding: 12px 20px;
+    color: Black;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
 .userTopBtns button:hover {
-    background-color: darkgreen;
+    background-color: DarkGreen;
+    color: White;
 }
 
-.userInfo{
-    display: grid;
-    gap: 20px;
+/* Gruppering för aktivitetsknappar */
+#activityLevel {
+    font-size: 15px;
+    padding: 5px;
 }
 
-
-
-.userInfo input{
-    text-align: start;
+/* Sektionen för Ålder, Vikt, Längd */
+.userInfo {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
 }
 
-
-
-#activityChoice {
-    display: grid;
-    gap: 10px;
+.userInfo div {
+    flex: 1;
+    /* Gör att alla tre boxar blir lika stora */
 }
 
-#activityChoice button {
-    border-style: solid;
-    border-radius: 10px;
+.userInfo h4 {
+    color: LimeGreen;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.userInfo input {
+    width: 100%;
     padding: 10px;
-    color: black;
+    border-radius: 5px;
+    border: 1px solid Gray;
+    background-color: White;
+    box-sizing: border-box;
+    /* Ser till att padding inte förstör bredden */
 }
 
-#activityChoice button:hover {
-    background-color: rgba(255, 255, 255, 0.75);
-}
+.imperialINputs {
+    display: flex;
 
-#displayIntake {
-    background-color: white;
-    color: black;
-    padding: 10px;
-    border-style: solid;
-    border-radius: 10px;
 }
 
 .macros {
-    display: grid;
-    gap: 10px;
-    font-size: 15px;
-    max-width: 200px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    color: White;
 }
 
-#userDailyIntake {
-    color: white;
+.macros p {
+    margin: 8px 0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
 }
 
+#displayKcal {
+    font-size: 20px;
+    font-weight: bold;
+    color: LimeGreen;
+}
+
+/* Nedersta knapparna */
 .calc-reset {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
     width: 100%;
 }
 
 .calc-reset button {
-    padding: 10px;
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    color: White;
+    font-weight: bold;
     cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.1s ease;
 }
+
+.calc-reset button:hover {
+    transform: scaleY(1.09)
+}
+
+#userKcalInfo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+}
+
+
 
 footer {
     background-color: black;
@@ -264,6 +298,8 @@ footer {
     text-decoration: none;
     display: block;
 }
+
+
 
 @media (max-width: 768px) {
 
@@ -312,7 +348,7 @@ footer {
         justify-content: center;
         right: 0;
         top: 81px;
-        background: linear-gradient(black,darkgreen);
+        background: linear-gradient(black, darkgreen);
         border-bottom-left-radius: 15px;
         box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
         z-index: 999;
@@ -420,6 +456,18 @@ footer {
     .macros {
         font-size: 20px;
         max-width: 200px;
+    }
+
+    #activityLevel {
+        padding: 20px;
+        display: grid;
+        justify-content: center;
+    }
+
+    option {
+        padding: 20px;
+        font-size: 20px;
+        text-align: center;
     }
 
     .calc-reset button {
