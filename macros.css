@@ -159,7 +159,7 @@ section {
     margin: 0;
 }
 
-.topBtns{
+.topBtns {
     display: grid;
     grid-template-columns: repeat(2.1fr);
     gap: 2px;
@@ -190,8 +190,8 @@ section {
     color: White;
 }
 
-.BtnMeasurmentSystem button{
-        background-color: LimeGreen;
+.BtnMeasurmentSystem button {
+    background-color: LimeGreen;
     border: none;
     cursor: pointer;
     padding: 12px 20px;
@@ -202,8 +202,8 @@ section {
     width: 150px;
 }
 
-.BtnMeasurmentSystem button:hover{
-      background-color: DarkGreen;
+.BtnMeasurmentSystem button:hover {
+    background-color: DarkGreen;
     color: White;
 }
 
@@ -244,7 +244,6 @@ section {
 
 .imperialINputs {
     display: flex;
-
 }
 
 .macros {
@@ -429,95 +428,83 @@ footer {
         box-sizing: border-box;
     }
 
+    @media (max-width: 768px) {
+    .daily-intake {
+        width: 95%;
+        padding: 20px 15px;
+        margin: 20px auto;
+        gap: 20px;
+    }
+
+    
     .daily-intake-info h4 {
-        font-size: 30px;
+        font-size: 18px; 
     }
 
-    .userGenderBtns button {
-        padding: 20px;
-        font-size: 20px;
+ 
+    .topBtns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
-    .BtnMeasurmentSystem button{
-        padding: 20px;
-        font-size: 20px;
-        width: 190px;
-    }
-
-    .userGenderBtns h4 {
-        font-size: 25px;
-    }
-
-    #activityChoice button {
-        padding: 15px;
-        font-size: 15px;
-    }
-
-    #displayMeasurmentSystemType{
-        font-size: 20px;
-    }
-
-    .userInfo{
-        display: block;
-    }
-
-    .userInfo input{
-        width: 300px;
-    }
-
-    .userInfo h4{
-        font-size: 20px;
-        
-    }
-
-    .age,
-    .weight,
-    .height {
-        font-size: 20px;
-    }
-
-    #age,
-    #weight,
-    #height {
-        color: black;
-    }
-
-    .age input {
-        font-size: 20px;
-    }
-
-    .weight input {
-        font-size: 20px;
-    }
-
-    .height input {
-        font-size: 20px;
-    }
-
-    #userDailyIntake {
-        font-size: 25px;
-    }
-
-    .macros {
-        font-size: 20px;
-        max-width: 200px;
-    }
 
     #activityLevel {
-        padding: 20px;
-        display: grid;
-        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        font-size: 16px; 
     }
 
-    option {
-        padding: 20px;
-        font-size: 20px;
+   
+    .userInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .userInfo div {
+        width: 100%; 
+    }
+
+    .userInfo h4 {
+        margin: 0 0 8px 0; 
         text-align: center;
+        font-size: 18px;
+    }
+
+    .userInfo input {
+        width: 100%; 
+        max-width: 320px; 
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    /* 6. Results/Macros Box */
+    .macros {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .macros p {
+        font-size: 16px;
+    }
+
+    #displayKcal {
+        font-size: 20px;
+    }
+
+    .calc-reset {
+        flex-direction: column; 
+        gap: 10px;
     }
 
     .calc-reset button {
-        padding: 20px;
-        font-size: 20px;
-        color: black;
+        width: 100%;
+        padding: 18px;
+        font-size: 18px;
     }
+}
 }
