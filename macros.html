@@ -71,14 +71,19 @@
                 din information. Du kan också nollställa allt genom att trycka på "nollställ."
             </h4>
         </div>
-        <div class="userTopBtns">
-            <button id="male" onclick="Male()">Man</button>
-            <button id="female" onclick="Female()">Kvinna</button>
-            <button id="BtnMeasurmentSystem" onclick="MeasurmentSystem()">Metric</button>
+        <div class="topBtns">
+            <div class="userGenderBtns">
+                <button id="male" onclick="Male()">Man</button>
+                <button id="female" onclick="Female()">Kvinna</button>
+            </div>
+            <div class="BtnMeasurmentSystem">
+                <button id="BtnMeasurmentSystem" onclick="MeasurmentSystem()">Metric</button>
+            </div>
         </div>
         <div class="acitivity-level">
             <div id="activityChoice">
                 <select name="activityLevel" id="activityLevel" onchange="updateActivity()">
+                    <option value="" disabled selected hidden >-Välj aktivitets nivå-</option>
                     <option value="1.2">Stillstående (kontorsjobb)</option>
                     <option value="1.375">Lätt träning (1-2 dagar/vecka)</option>
                     <option value="1.55">Måttlig träning (3-5 dagar/vecka)</option>
@@ -122,9 +127,7 @@
             <button style="background-color: red;" class="clear" onclick="ClearInputs()">Nollställ</button>
         </div>
     </section>
-
-
-
+    
     <footer class="footer">
         <h3>Kontakt information</h3>
         <h4>Mejl</h4>

@@ -159,15 +159,20 @@ section {
     margin: 0;
 }
 
-/* Gruppering för kön och system */
-.userTopBtns {
+.topBtns{
+    display: grid;
+    grid-template-columns: repeat(2.1fr);
+    gap: 2px;
+}
+
+.userGenderBtns {
     display: flex;
-    gap: 10px;
+    gap: 2px;
     justify-content: center;
     width: 100%;
 }
 
-.userTopBtns button {
+.userGenderBtns button {
     background-color: LimeGreen;
     border: none;
     cursor: pointer;
@@ -178,8 +183,27 @@ section {
     transition: 0.3s;
 }
 
-.userTopBtns button:hover {
+
+
+.userGenderBtns button:hover {
     background-color: DarkGreen;
+    color: White;
+}
+
+.BtnMeasurmentSystem button{
+        background-color: LimeGreen;
+    border: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    color: Black;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    width: 150px;
+}
+
+.BtnMeasurmentSystem button:hover{
+      background-color: DarkGreen;
     color: White;
 }
 
@@ -270,7 +294,6 @@ section {
 #userKcalInfo {
     margin-left: auto;
     margin-right: auto;
-    width: 350px;
 }
 
 
@@ -410,19 +433,41 @@ footer {
         font-size: 30px;
     }
 
-    .userTopBtns button {
-        cursor: pointer;
+    .userGenderBtns button {
         padding: 20px;
         font-size: 20px;
     }
 
-    .userTopBtns h4 {
+    .BtnMeasurmentSystem button{
+        padding: 20px;
+        font-size: 20px;
+        width: 190px;
+    }
+
+    .userGenderBtns h4 {
         font-size: 25px;
     }
 
     #activityChoice button {
         padding: 15px;
         font-size: 15px;
+    }
+
+    #displayMeasurmentSystemType{
+        font-size: 20px;
+    }
+
+    .userInfo{
+        display: block;
+    }
+
+    .userInfo input{
+        width: 300px;
+    }
+
+    .userInfo h4{
+        font-size: 20px;
+        
     }
 
     .age,

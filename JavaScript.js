@@ -263,8 +263,24 @@ function CalculateIntake() {
 /**When the user wants to clear the inputs (Reset) */
 function ClearInputs() {
 
+    chosengender="";
+    userActivity=0;
+    measurmentSystem="metric";
+    userHeight.hidden=false;
 
+    feet.hidden=true;
+    inches.hidden=true;
 
+    document.getElementById("weight").placeholder = "kg";
+    document.getElementById("weightMeasurment").innerText = "Vikt";
+    document.getElementById("heightMeasurment").innerText = "Längd";
+    document.getElementById("displayMeasurmentSystemType").innerText = "Metric";
+    document.getElementById("BtnMeasurmentSystem").innerText = "Imperial";
+
+    const activityLevel=document.getElementById("activityLevel");
+    if (activityLevel) {
+        activityLevel.selectedIndex=0;
+    }
 
     const buttons = ["sedBtn", "lightBtn", "modBtn", "hevBtn", "athBtn", "male", "female", "activityDeclineBtn"];
     buttons.forEach(id => {
