@@ -242,8 +242,18 @@ section {
     /* Ser till att padding inte förstör bredden */
 }
 
+#userDailyIntake {
+    text-shadow: 10px 12px 20px;
+}
+
 .imperialINputs {
     display: flex;
+}
+
+#displayMeasurmentSystemType {
+    font-size: 20px;
+    color: black;
+    font-family: sans-serif;
 }
 
 .macros {
@@ -324,28 +334,29 @@ footer {
 
 
 @media (max-width: 768px) {
-
     html,
     body {
         overflow-x: hidden;
     }
 
     body {
-        background-color: black;
+        background: black;
+        margin-top: 60px;
     }
 
     header {
         display: flex;
         justify-content: flex-end;
-        top: 15px;
+        align-items: center;
+        height: 60px;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
 
     .logo {
         position: absolute;
-    }
-
-    #menu-btn {
-        margin-bottom: 3.5px;
+        left: 15px;
+        bottom: 15px;
     }
 
     .mobile-toggle {
@@ -354,157 +365,92 @@ footer {
         background: none;
         border: none;
         color: white;
-        padding: 10px;
         cursor: pointer;
-        transition: transform .2s;
         z-index: 1000;
-    }
-
-    .mobile-toggle:active {
-        transform: scale(1.2);
     }
 
     #nav {
         display: none;
-        position: absolute;
-        justify-content: center;
+        position: fixed;
         right: 0;
-        top: 81px;
-        background: linear-gradient(black, darkgreen);
+        top: 60px;
+        width: 200px;
+        background: rgba(0, 0, 0, 0.95);
         border-bottom-left-radius: 15px;
-        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
-        z-index: 999;
         flex-direction: column;
-        padding: 20px 0;
-    }
-
-    ul {
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    li a {
-        color: black;
-        background-color: white;
-        border-radius: 5px;
-    }
-
-    li a:active {
-        color: black;
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 5px;
+        padding: 10px 0;
+        border-left: 1px solid green;
+        border-bottom: 1px solid green;
     }
 
     #nav.show-mobile {
         display: flex;
     }
 
-    #nav ul {
+    ul {
         flex-direction: column;
-        gap: 0;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    li {
+        padding: 10px;
         margin: 0;
     }
 
-    #nav li a {
-        font-size: 1.2rem;
-        padding: 5px;
+    li a {
+        font-size: 1.1rem;
         display: block;
+        text-align: center;
+        background: #1a1a1a;
+        border: 1px solid #333;
     }
 
     .macro-container {
         flex-direction: column;
-        gap: 20px;
-        padding: 10px;
+        align-items: center;
+        padding: 20px;
     }
 
     .card {
-        width: 90%;
-        max-width: 420px;
-        margin: 0 auto;
-        box-sizing: border-box;
+        width: 80%;
+        max-width: 350px;
     }
 
-    @media (max-width: 768px) {
     .daily-intake {
-        width: 95%;
-        padding: 20px 15px;
+        width: 80%;
+        padding: 20px;
         margin: 20px auto;
-        gap: 20px;
     }
 
-    
-    .daily-intake-info h4 {
-        font-size: 18px; 
-    }
-
- 
-    .topBtns {
-        display: flex;
+    .userInfo {
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-
-    #activityLevel {
-        width: 100%;
-        max-width: 100%;
-        padding: 15px;
-        font-size: 16px; 
+        gap: 20px;
     }
 
    
-    .userInfo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
 
-    .userInfo div {
-        width: 100%; 
-    }
-
-    .userInfo h4 {
-        margin: 0 0 8px 0; 
-        text-align: center;
-        font-size: 18px;
-    }
-
-    .userInfo input {
-        width: 100%; 
-        max-width: 320px; 
-        font-size: 18px;
-        padding: 12px;
-    }
-
-    /* 6. Results/Macros Box */
-    .macros {
+    .topBtns {
+        grid-template-columns: 1fr;
         width: 100%;
-        padding: 15px;
     }
 
-    .macros p {
-        font-size: 16px;
+    .userGenderBtns, .BtnMeasurmentSystem {
+        width: 100%;
+        justify-content: stretch;
     }
 
-    #displayKcal {
-        font-size: 20px;
+    .userGenderBtns button, .BtnMeasurmentSystem button {
+        flex: 1;
+        width: 100%;
     }
 
     .calc-reset {
-        flex-direction: column; 
-        gap: 10px;
+        flex-direction: column;
     }
 
-    .calc-reset button {
-        width: 100%;
-        padding: 18px;
-        font-size: 18px;
+    .guide-box {
+        width: 80%;
+        margin: 20px auto;
     }
-}
 }

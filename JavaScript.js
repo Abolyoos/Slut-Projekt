@@ -191,7 +191,7 @@ function CalculateIntake() {
     if (chosengender === "") {
         userDailyIntake.innerText = "Välj kön först";
         userDailyIntake.style.color = "red";
-        userDailyIntake.style.fontSize = "20px";
+        userDailyIntake.style.fontSize = "30px";
         return;
     } else {
 
@@ -199,7 +199,7 @@ function CalculateIntake() {
         if (userActivity === 0) {
             userDailyIntake.innerText = "Välj aktivitetsnivå!";
             userDailyIntake.style.color = "red";
-            userDailyIntake.style.fontSize = "20px";
+            userDailyIntake.style.fontSize = "30px";
             return;
         }
 
@@ -207,7 +207,7 @@ function CalculateIntake() {
         if (!age || !weight || !height) {
             userDailyIntake.innerText = "Fyll i alla fält!";
             userDailyIntake.style.color = "red";
-            userDailyIntake.style.fontSize = "20px";
+            userDailyIntake.style.fontSize = "30px";
             return;
         }
 
