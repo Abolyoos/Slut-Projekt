@@ -210,7 +210,7 @@ section {
 /* Gruppering för aktivitetsknappar */
 #activityLevel {
     font-size: 15px;
-    padding: 5px;
+    padding: 8px;
 }
 
 /* Sektionen för Ålder, Vikt, Längd */
@@ -334,29 +334,27 @@ footer {
 
 
 @media (max-width: 768px) {
-    html,
+      html,
     body {
         overflow-x: hidden;
     }
 
     body {
-        background: black;
-        margin-top: 60px;
+        background-color: black;
     }
 
     header {
         display: flex;
         justify-content: flex-end;
-        align-items: center;
-        height: 60px;
-        padding: 0 15px;
-        box-sizing: border-box;
+        top: 15px;
     }
 
     .logo {
         position: absolute;
-        left: 15px;
-        bottom: 15px;
+    }
+
+    #menu-btn {
+        margin-bottom: 3.5px;
     }
 
     .mobile-toggle {
@@ -365,47 +363,62 @@ footer {
         background: none;
         border: none;
         color: white;
-        cursor: pointer;
+        padding: 10px;
+        transition: transform .2s;
         z-index: 1000;
+    }
+
+    .mobile-toggle:active {
+        transform: scale(1.2);
     }
 
     #nav {
         display: none;
-        position: fixed;
+        position: absolute;
         right: 0;
-        top: 60px;
-        width: 200px;
-        background: rgba(0, 0, 0, 0.95);
+        top: 81px;
+        background: linear-gradient(black, darkred);
         border-bottom-left-radius: 15px;
+        z-index: 999;
         flex-direction: column;
-        padding: 10px 0;
-        border-left: 1px solid green;
-        border-bottom: 1px solid green;
+        padding: 20px 0;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 12vw;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li a {
+        color: black;
+        background-color: white;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    li a:active {
+        background-color: lightgray;
     }
 
     #nav.show-mobile {
         display: flex;
     }
 
-    ul {
+    #nav ul {
         flex-direction: column;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    li {
-        padding: 10px;
+        gap: 0;
         margin: 0;
     }
 
-    li a {
-        font-size: 1.1rem;
+    #nav li a {
+        font-size: 1.2rem;
+        padding: 5px;
         display: block;
-        text-align: center;
-        background: #1a1a1a;
-        border: 1px solid #333;
     }
-
     .macro-container {
         flex-direction: column;
         align-items: center;
@@ -428,7 +441,9 @@ footer {
         gap: 20px;
     }
 
-   
+    .userInfo h4{
+        font-size: 20px;
+    }
 
     .topBtns {
         grid-template-columns: 1fr;
@@ -443,11 +458,23 @@ footer {
     .userGenderBtns button, .BtnMeasurmentSystem button {
         flex: 1;
         width: 100%;
+        font-size: 20px;
     }
+
+    #activityLevel {
+    font-size: 15px;
+    padding: 10px;
+    
+    border-radius: 20px;
+}
 
     .calc-reset {
         flex-direction: column;
     }
+
+     .calc-reset button{
+        font-size: 16px;
+     }
 
     .guide-box {
         width: 80%;
