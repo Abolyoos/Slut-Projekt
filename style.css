@@ -76,26 +76,47 @@ span {
 
 .hero {
     text-align: center;
+    padding: 80px 20px;
 }
 
-h1 {
-    font-size: 60px;
-    border-color: black;
+.hero h1 {
+    font-size: 65px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    background: none;
+    color: red;
 }
 
 .hero p {
-    font-size: 29px;
+    font-size: 24px;
+    color: #ccc;
+    font-style: italic;
 }
 
 .info {
-    padding: 20px;
+    padding: 60px 20px;
     text-align: center;
-    border-top: 1px solid red;
-    border-bottom: 1px solid red;
-    max-width: 520px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 0, 0, 0.3);   
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.info p {
+    font-size: 19px;
+    line-height: 1.6;
+    color: #eee;
 }
 
 
@@ -333,6 +354,35 @@ footer {
         font-size: 1.2rem;
         padding: 5px;
         display: block;
+    }
+
+    .hero {
+        padding: 40px 15px; 
+    }
+
+    .hero h1 {
+        font-size: 38px; 
+        letter-spacing: -1px;
+        line-height: 1.1;
+    }
+
+    .hero p {
+        font-size: 18px; 
+        margin-top: 5px;
+    }
+
+    .info {
+        padding: 40px 20p;
+        width:90%; 
+    }
+
+    .info h2 {
+        font-size: 26px; 
+    }
+
+    .info p {
+        font-size: 16px;  
+        line-height: 1.5;
     }
 
     .features {
