@@ -103,7 +103,7 @@ span {
     text-align: center;
     max-width: 700px;
     margin: 0 auto;
-    border-top: 1px solid rgba(255, 0, 0, 0.3);   
+    border-top: 1px solid rgba(255, 0, 0, 0.3);
     border-bottom: 1px solid rgba(255, 0, 0, 0.3);
 }
 
@@ -357,31 +357,31 @@ footer {
     }
 
     .hero {
-        padding: 40px 15px; 
+        padding: 40px 15px;
     }
 
     .hero h1 {
-        font-size: 38px; 
+        font-size: 38px;
         letter-spacing: -1px;
         line-height: 1.1;
     }
 
     .hero p {
-        font-size: 18px; 
+        font-size: 18px;
         margin-top: 5px;
     }
 
     .info {
         padding: 40px 20px;
-        width:90%; 
+        width: 90%;
     }
 
     .info h2 {
-        font-size: 26px; 
+        font-size: 26px;
     }
 
     .info p {
-        font-size: 16px;  
+        font-size: 16px;
         line-height: 1.5;
     }
 
