@@ -125,11 +125,17 @@ span {
     flex-direction: row;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
     gap: 100px;
     color: white;
     text-align: center;
     background-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+    border-right: none;
+    border-left: none;
+
 }
 
 .Övningar,
@@ -408,12 +414,14 @@ footer {
         min-height: 280px;
         background-position: center;
         background-size: cover;
+        
     }
 
     #Infokost a,
     #infoFärdigschema a,
     #InfoÖvningar a {
-        right: 75px;
+        width: 90%;
+        left: 3px;
     }
 
     h1 {

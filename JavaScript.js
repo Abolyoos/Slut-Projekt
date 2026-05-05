@@ -98,7 +98,7 @@ let userActivity = 0;
 
 function updateActivity() {
     const select = document.getElementById("activityLevel");
-    userActivity =parseFloat(select.value);
+    userActivity = parseFloat(select.value);
 }
 
 /**If chosen userTopBtns is male */
@@ -190,7 +190,7 @@ function CalculateIntake() {
     /**If no userTopBtns was chosen by the user */
     if (chosengender === "") {
         userDailyIntake.innerText = "Välj kön först";
-        userDailyIntake.style.color = "red";
+        userDailyIntake.style.color = "black";
         userDailyIntake.style.fontSize = "30px";
         return;
     } else {
@@ -198,7 +198,7 @@ function CalculateIntake() {
         /**If the value of the users activity level was not changed/(chosen by the user) */
         if (userActivity === 0) {
             userDailyIntake.innerText = "Välj aktivitetsnivå!";
-            userDailyIntake.style.color = "red";
+            userDailyIntake.style.color = "black";
             userDailyIntake.style.fontSize = "30px";
             return;
         }
@@ -206,7 +206,7 @@ function CalculateIntake() {
         /**If personal information was not found by the program */
         if (!age || !weight || !height) {
             userDailyIntake.innerText = "Fyll i alla fält!";
-            userDailyIntake.style.color = "red";
+            userDailyIntake.style.color = "black";
             userDailyIntake.style.fontSize = "30px";
             return;
         }
@@ -231,7 +231,7 @@ function CalculateIntake() {
 
 
         /**Calculating the users daily intake
-         * by choosing the recomended amount of daily protien intake. */
+         * by choosing the recomended amount of daily protein intake. */
         const totalKcalories = Math.round(bmr * userActivity);
 
         let protienGrams = Math.round(weight * 2);
@@ -248,9 +248,9 @@ function CalculateIntake() {
 
         displayKcal.innerText = totalKcalories + " Kcal/dag";
         displayCarb.innerText = carbGrams + "g Kolhydrater/dag";
-        displayProtien.innerText = protienGrams + "g Protien/dag";
+        displayProtien.innerText = protienGrams + "g Protein/dag";
         displayFat.innerText = fatGram + "g Fett/dag";
-        userKcalInfo.innerText = "Kalorierna du ska äta dagligen för att behålla din nuvarande vikt är " + (totalKcalories) + " Kcal";
+        userKcalInfo.innerText = "Kalorierna du skall äta dagligen för att behålla din nuvarande vikt är " + (totalKcalories) + " Kcal";
         userBulkInfo.innerText = "För att bygga muskler bör du äta " + (totalKcalories + 500) + " kcal/dag";
         userCutInfo.innerText = "För att gå ner i vikt bör du äta " + (totalKcalories - 500) + " Kcal/dag";
         userDailyIntake.innerText = "Din dagliga intag";
@@ -263,13 +263,13 @@ function CalculateIntake() {
 /**When the user wants to clear the inputs (Reset) */
 function ClearInputs() {
 
-    chosengender="";
-    userActivity=0;
-    measurmentSystem="metric";
-    userHeight.hidden=false;
+    chosengender = "";
+    userActivity = 0;
+    measurmentSystem = "metric";
+    userHeight.hidden = false;
 
-    feet.hidden=true;
-    inches.hidden=true;
+    feet.hidden = true;
+    inches.hidden = true;
 
     document.getElementById("weight").placeholder = "kg";
     document.getElementById("weightMeasurment").innerText = "Vikt";
@@ -277,9 +277,9 @@ function ClearInputs() {
     document.getElementById("displayMeasurmentSystemType").innerText = "Metric";
     document.getElementById("BtnMeasurmentSystem").innerText = "Imperial";
 
-    const activityLevel=document.getElementById("activityLevel");
+    const activityLevel = document.getElementById("activityLevel");
     if (activityLevel) {
-        activityLevel.selectedIndex=0;
+        activityLevel.selectedIndex = 0;
     }
 
     const buttons = ["sedBtn", "lightBtn", "modBtn", "hevBtn", "athBtn", "male", "female", "activityDeclineBtn"];
@@ -307,25 +307,3 @@ function ClearInputs() {
     });
 
 }
-
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-
-// 1. Kolla om användaren har valt mörkt läge tidigare (via localStorage)
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-}
-
-// 2. Lyssna på klick
-toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-
-    // 3. Spara valet i webbläsaren
-    if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-});
-
-

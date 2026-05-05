@@ -6,7 +6,6 @@
     display: none;
 }
 
-/* ...existing code... */
 
 body {
     color: white;
@@ -148,7 +147,6 @@ span {
 }
 
 .Progressiv-tip {
-    font-family:cursive;
     margin-top: 20px;
 }
 
