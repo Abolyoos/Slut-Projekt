@@ -1,0 +1,13 @@
+ .macros {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: White;
+            
+        }
+
+        .macros p {
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }

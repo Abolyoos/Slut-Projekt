@@ -94,7 +94,7 @@ window.addEventListener("scroll", function () {
 let chosengender = "";
 let userActivity = 0;
 
-/**If the user is unsure of acitivty */
+
 
 function updateActivity() {
     const select = document.getElementById("activityLevel");
@@ -176,7 +176,10 @@ function CalculateIntake() {
     const userKcalInfo = document.getElementById("userKcalInfo");
     const userBulkInfo = document.getElementById("userBulkInfo");
     const userCutInfo = document.getElementById("userCutInfo");
+
     const userDailyIntake = document.getElementById("userDailyIntake");
+    const macros = document.getElementById("macros");
+
 
     let height;
     if (measurmentSystem === "metric") {
@@ -246,6 +249,11 @@ function CalculateIntake() {
         const remainingKcalories = Math.round(totalKcalories - protienKcal - fatKcal);
         const carbGrams = Math.round(remainingKcalories / 4);
 
+        if (userDailyIntake.hidden && macros.hidden) {
+            userDailyIntake.removeAttribute("hidden");
+            macros.removeAttribute("hidden");
+        }
+
         displayKcal.innerText = totalKcalories + " Kcal/dag";
         displayCarb.innerText = carbGrams + "g Kolhydrater/dag";
         displayProtien.innerText = protienGrams + "g Protein/dag";
@@ -256,12 +264,14 @@ function CalculateIntake() {
         userDailyIntake.innerText = "Din dagliga intag";
         userDailyIntake.style.color = "white";
         userDailyIntake.style.fontSize = "20px";
-
     }
 }
 
 /**When the user wants to clear the inputs (Reset) */
 function ClearInputs() {
+
+    userDailyIntake.hidden = true;
+    macros.hidden = true;
 
     chosengender = "";
     userActivity = 0;
@@ -307,3 +317,4 @@ function ClearInputs() {
     });
 
 }
+

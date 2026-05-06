@@ -94,6 +94,11 @@ span {
     padding-bottom: 15px;
 }
 
+.info p{
+    font-size: 18px;
+    
+}
+
 .main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

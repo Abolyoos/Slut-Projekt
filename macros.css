@@ -264,6 +264,7 @@ section {
     width: 100%;
     text-align: center;
     color: White;
+     transition:0.5s ease-in-out;
 }
 
 .macros p {
