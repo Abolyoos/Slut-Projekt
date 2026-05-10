@@ -80,11 +80,12 @@ window.addEventListener("scroll", function () {
         header.style.top = "";
         header.style.background = "rgba(0, 0, 0, 0.9)";
     }
+    /** testar utan 
     if (window.innerHeight + currentScroll > document.body.offsetHeight) {
         header.style.top = "";
         return;
     }
-
+ */
     lastScroll = currentScroll;
 });
 
@@ -249,8 +250,7 @@ function CalculateIntake() {
         const remainingKcalories = Math.round(totalKcalories - protienKcal - fatKcal);
         const carbGrams = Math.round(remainingKcalories / 4);
 
-        if (userDailyIntake.hidden && macros.hidden) {
-            userDailyIntake.removeAttribute("hidden");
+        if (macros.hidden) {
             macros.removeAttribute("hidden");
         }
 
@@ -270,7 +270,6 @@ function CalculateIntake() {
 /**When the user wants to clear the inputs (Reset) */
 function ClearInputs() {
 
-    userDailyIntake.hidden = true;
     macros.hidden = true;
 
     chosengender = "";
@@ -317,4 +316,3 @@ function ClearInputs() {
     });
 
 }
-

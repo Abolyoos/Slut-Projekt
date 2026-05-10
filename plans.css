@@ -10,9 +10,6 @@
 body {
     color: white;
     background: linear-gradient(black, purple);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     min-height: 100vh;
     margin-top: 80px;
 }
@@ -47,7 +44,6 @@ li a {
 }
 
 #nav li:nth-child(1) a {
-    text-decoration: underline;
     color: purple;
 }
 
