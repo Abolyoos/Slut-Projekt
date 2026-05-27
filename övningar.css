@@ -1,12 +1,9 @@
-* {
-    margin: 0;
-}
+/* global: nollställ marginaler */
+* { margin: 0; }
 
+.mobile-toggle { display: none; }
 
-.mobile-toggle {
-    display: none;
-}
-
+/* body och bakgrund */
 body {
     color: white;
     background: linear-gradient(black, darkblue);
@@ -14,6 +11,7 @@ body {
     margin-top: 80px;
 }
 
+/* header - fast navigator */
 header {
     position: fixed;
     top: 0;
@@ -21,22 +19,17 @@ header {
     transition: top 0.3s, background 1s;
     background-color: rgba(0, 0, 0, 0.85);
 }
+/* Pekar ut första child-elementet*/
+#nav li:nth-child(2) a { color: blue; }
 
-#nav li:nth-child(2) a {
-    color: blue;
-}
-
+/* nav-lista */
 ul {
     display: flex;
     gap: 12vw;
     justify-content: center;
 }
 
-li {
-    list-style-type: none;
-    padding: 20px;
-    margin-top: 10px;
-}
+li { list-style-type: none; padding: 20px; margin-top: 10px; }
 
 li a {
     text-decoration: none;
@@ -46,6 +39,21 @@ li a {
     border-color: transparent;
     font-size: 20px;
 }
+
+/* övningskort - bilder och text */
+[class^="övning"]  {
+    background-color: #2f2f2f;
+    align-items: column;
+    text-align: center;
+    width: fit-content;
+    padding: 40px;
+    padding-top: 0.05px;
+    color: white;
+    border: black solid;
+}
+
+
+
 
 li a:hover {
     color: rgba(255, 255, 255, 0.65);
@@ -98,6 +106,14 @@ span {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: blue 4px solid;
+    border-right: blue 4px solid;
+    transition: transform 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 main img {

@@ -1,3 +1,4 @@
+/* global: nollställ marginaler */
 * {
     margin: 0;
 }
@@ -14,6 +15,7 @@ body {
     margin-top: 80px;
 }
 
+/* header - fast topp navigering */
 header {
     position: fixed;
     top: 0;
@@ -42,7 +44,7 @@ li a {
     border-color: transparent;
     font-size: 20px;
 }
-
+/*Pekar ut första child-element*/
 #nav li:nth-child(1) a {
     color: purple;
 }
@@ -71,7 +73,7 @@ li a:active {
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 2px;
 }
-
+/*Stylem förm endast "YE"*/
 span {
     color: purple;
     background-color: white;
@@ -89,6 +91,7 @@ span {
     padding: 20px;
 }
 
+/* plan-container - kortlayout för träningsprogram */
 .plan-container {
     display: flex;
     justify-content: center;
@@ -97,6 +100,7 @@ span {
     flex-wrap: wrap;
 }
 
+/* plan-card - enskilt programkort */
 .plan-card {
     background-color: #2f2f2f;
     border: 1px solid purple;

@@ -79,13 +79,7 @@ window.addEventListener("scroll", function () {
         // Scrollar upp → visa navbar
         header.style.top = "";
         header.style.background = "rgba(0, 0, 0, 0.9)";
-    }
-    /** testar utan 
-    if (window.innerHeight + currentScroll > document.body.offsetHeight) {
-        header.style.top = "";
-        return;
-    }
- */
+    } 
     lastScroll = currentScroll;
 });
 
@@ -194,7 +188,7 @@ function CalculateIntake() {
     /**If no userTopBtns was chosen by the user */
     if (chosengender === "") {
         userDailyIntake.innerText = "Välj kön först";
-        userDailyIntake.style.color = "black";
+        userDailyIntake.style.color = "black"; // Tetsar färg
         userDailyIntake.style.fontSize = "30px";
         return;
     } else {
@@ -316,3 +310,5 @@ function ClearInputs() {
     });
 
 }
+
+
